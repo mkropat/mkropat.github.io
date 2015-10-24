@@ -23,6 +23,7 @@ A selection of the work I have on Github:
 
 ### Presentations
 
+- [C#: What's a dynamic?](https://mkropat.github.io/presentation-whats-a-dynamic/)
 - [Chef Workshop: Getting Started With Chef](http://mkropat.github.io/presentation-chef-workshop/)
 - [Database Versioning: It Doesn't Have To Be Hard](http://mkropat.github.io/presentation-db-versioning/)
 - [JavaScript: The Why And How Of Strict Mode](http://mkropat.github.io/presentation-js-strict-mode/)
