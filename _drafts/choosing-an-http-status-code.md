@@ -14,7 +14,7 @@ redirect the user to another page?  `302`, or maybe `301`.
 
 Life is bliss, well... until someone tells you you're not doing this REST
 thing.  Next thing you know, you can't sleep at night because you need to know
-if your new resource returns the RFC-compliant, Roy Fielding approved status
+if your new resource returns the RFC-compliant, Roy-Fielding-approved status
 code.  Is it just a `200` here?  Or should it really be a `204 No Content`?
 No, definitely a `202 Accepted`... or is that a `201 Created`?
 
@@ -25,15 +25,13 @@ trying to apply Sun Tzu's *Art of War* to modern business strategy.  Timeless
 advice, to be sure, but I haven't yet figured out how The Five Ways to Attack
 With Fire are going to help me do market validation.
 
-If you've ever tried to figure out what status code..., you know what I mean
-
 ![basic auth screenshot]()
 
 *Even older than Web 2.0*
 
 If only there was some kind of visual decision tree that would let you quickly
 identify the few status codes that were relevant to your situation so you could
-ignore all the chaff.
+ignore the obsolete and irrelevant ones.
 
 You're welcome, internet.  That day is now.
 
@@ -42,24 +40,23 @@ You're welcome, internet.  That day is now.
 ![http status codes](/assets/HTTP-Status-Codes.svg)
 
 It may seem ridiculously obvious, but I've see too many people get lost in the
-weeds wondering whether, "is this more of a `501 Not Implemented` or a `410
-Gone`?"  Stop.  If you ever find yourself deliberating between specific codes
-in entirely different response classes, you're doing it wrong.  Go back and
-look at the where-to-start flowchart.
+weeds wondering whether, "is this more of a `503 Service Unavailable` or a `404
+Not Found`?"  Stop.  If you ever find yourself deliberating between specific
+codes in entirely different response classes, you're doing it wrong.  Go back
+and look at the above flowchart.
 
 A few notes before you dive in to specific flowcharts:
 
 - You don't have to take my word for it — go read [RFC 7231][rfc7231] and
-  [httpstatus.com](https://httpstatuses.com/)
+  [httpstatuses.com][httpstatuses]
 - The audience I have in mind is someone making a website or RESTish API
   - Response codes specific to implementing a web server are glossed over
   - (And omitted entirely for proxy servers)
-- I've grouped responses into three rough categories:
-  - ![Standard](/assets/HTTP-Status-Codes-Standard.svg) It's hard to imagine
-    making websites and APIs without these
-  - ![Useful](/assets/HTTP-Status-Codes-Useful.svg) Not strictly necessary,
-    but returning these where appropriate will help anyone who's familiar with
-    HTTP to use your site or API and troubleshoot any issues they run into
+- I've grouped response codes into three rough categories:
+  - ![Standard](/assets/HTTP-Status-Codes-Standard.svg) You're probably already using these
+  - ![Useful](/assets/HTTP-Status-Codes-Useful.svg) Returning these where
+    appropriate will help anyone who's familiar with HTTP to use your
+    website/API and troubleshoot any issues they run into
   - ![Irrelevant](/assets/HTTP-Status-Codes-Irrelevant.svg) Chances are you
     can safely ignore these and return a more general code instead
 
@@ -67,7 +64,8 @@ Last but not least, a disclaimer: I have no qualifications to write on the
 subject, other than that I'm a guy who's read some RFCs and works at an office,
 Racksburg, where we try every day to make useful APIs.  If you think I'm wrong
 or I've slighted your favorite status code, it's probably because I'm an idiot
-and you should go here and let me know exactly how.
+and you should <a href="#FIXME-reddit-link">go here</a> and let me know exactly
+how wrong I am.
 
 ### 2XX/3XX
 
@@ -83,22 +81,76 @@ and you should go here and let me know exactly how.
 
 ### Coda: On Why Status Codes Matter
 
-I'm not actually sure they do.
+I'm not completely sure they do matter.
 
 There's a lot of smart people at Facebook and [they built an API][graph-api]
-that only returns `200`.
+that only ever returns `200`.
 
-### See Also
+The basic argument against bothering with specific status codes is this: the
+existing status codes are much too general for a modern website/API.  If the
+response has to include details in an application-specific format anyway — such
+as which fields failed validation and why — in order for the client to handle
+the response in any sort of meaningful way, then why worry about spending any
+time on a redundant, not-as-useful HTTP status code?
 
-- [HTTP Status Codes Visualized As a Subway Map](http://restlet.com/http-status-codes-map)
-- [Status Codes To Cat Memes As a Service](https://http.cat/)
+When pressed for a reason why it is important to use specific status codes, [a
+common reason cited][layered-system] is that HTTP is a layered system and that
+any proxy, cache, or HTTP library sitting between the client and server will
+work better when the response code is meaningful.  I don't find this argument
+compelling, if for no other reason than this: in a world where everyone is
+moving to HTTPS, we've forbidden any proxy or caching nodes that are not under
+direct control of the server.
+
+Instead I will present three reasons why status codes still matter:
+
+1. Clients already handle (or could easily be extended to handle) different
+   codes with special behavior:
+  - `301 Moved Permanently` vs `302 Found` has SEO implications with Google and others
+  - `301 Moved Permanently` is implicitly cacheable, while `429 Too Many Requests` is implicitly not-cacheable, and so on
+  - A client library could handle `429 Too Many Requests` by backing off and retrying the request after a delay
+  - A client library could handle `503 Service Unavilable` similarly
+
+1. Even though not exhaustive for modern requirements, many status codes
+   represent cases still worth handling with a special response (so why not use
+   the standard code?)
+  - APIs that return `404` in place of `405 Method Not Allowed` drive me crazy
+    wondering, "did I just fat-finger the URL or am I sending the wrong HTTP
+    method?"
+  - I can tell you we would have saved hours upon hours of debugging time if
+    only we had distinguished `502 Bad Gateway` (an upstream problem) instead
+    of confusing it with `500 Internal Server Error`†† 
+
+1. Believe it or not, [there's a convention in widely used APIs][status-usage]
+   to return status codes like `201 Created`, `429 Too Many Requests`, and `503
+   Service Unavilable`.  If you follow that convention, users will find it that
+   much easier to use your website/API and troubleshoot any issues they may
+   run into.
+
+The hardest part used to be deciding which code to return, but I know that
+armed with the right knowledge — perhaps in the form of a flowchart ;) —
+picking a meaningful status code is easy.
 
 ### Notes
 
 † Pay no mind to RFC 2616 (or even worse, 2068).  The RFC you're looking for is
 [7231][rfc7231].
 
+†† Mini-rant against my case: clients in general don't care about `500` vs `502
+Bad Gateway`, as it's primarily a debugging aid for whoever maintains the
+servers.  This is actually a case where it's worth including the information,
+but not necessarily in the status code.
+
+### See Also
+
+- [HTTP status code reference][httpstatuses]
+- [HTTP status codes used by world-famous APIs][status-usage]
+- [HTTP status codes visualized as a subway map](http://restlet.com/http-status-codes-map)
+- [Status Codes To Cat Memes As a Service](https://http.cat/)
+- [Status Codes To Dog Memes As a Service](http://httpstatusdogs.com/)
+
+[graph-api]: https://developers.facebook.com/docs/graph-api
+[httpstatuses]: https://httpstatuses.com/
+[layered-system]: http://stackoverflow.com/a/31330860/27581
 [rfc2068]: https://tools.ietf.org/html/rfc2068
 [rfc7231]: https://tools.ietf.org/html/rfc7231
-[graph-api]: https://developers.facebook.com/docs/graph-api
-
+[status-usage]: https://gist.github.com/vkostyukov/32c84c0c01789425c29a
