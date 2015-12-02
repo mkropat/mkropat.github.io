@@ -25,9 +25,7 @@ trying to apply Sun Tzu's *Art of War* to modern business strategy.  Timeless
 advice, to be sure, but I haven't yet figured out how The Five Ways to Attack
 With Fire are going to help me do market validation.
 
-![basic auth screenshot]()
-
-*Even older than Web 2.0*
+![retro screenshot](/assets/win98-rfc2068-annotated.png "If you think about it, it's a testament to RFC 2068 that Netscape Navigator still works in 2015 at all")
 
 If only there was some kind of visual decision tree that would let you quickly
 identify the few status codes that were relevant to your situation so you could
@@ -118,27 +116,22 @@ Instead I will present three reasons why status codes still matter:
     method?"
   - I can tell you we would have saved hours upon hours of debugging time if
     only we had distinguished `502 Bad Gateway` (an upstream problem) instead
-    of confusing it with `500 Internal Server Error`†† 
+    of confusing it with `500 Internal Server Error`
 
-1. Believe it or not, [there's a convention in widely used APIs][status-usage]
-   to return status codes like `201 Created`, `429 Too Many Requests`, and `503
-   Service Unavilable`.  If you follow that convention, users will find it that
-   much easier to use your website/API and troubleshoot any issues they may
-   run into.
+1. Believe it or not, [a convention is being established among widely used
+   APIs][status-usage] to return status codes like `201 Created`, `429 Too Many
+   Requests`, and `503 Service Unavilable`.  If you follow that convention,
+   users will find it that much easier to use your website/API and troubleshoot
+   any issues they may run into.
 
-The hardest part used to be deciding which code to return, but I know that
-armed with the right knowledge — perhaps in the form of a flowchart ;) —
-picking a meaningful status code is easy.
+The hardest part of it all used to be deciding which code to return, but with
+the right knowledge (oh, I don't know, in say flowchart-form) picking a
+meaningful code becomes a lot easier.
 
 ### Notes
 
 † Pay no mind to RFC 2616 (or even worse, 2068).  The RFC you're looking for is
 [7231][rfc7231].
-
-†† Mini-rant against my case: clients in general don't care about `500` vs `502
-Bad Gateway`, as it's primarily a debugging aid for whoever maintains the
-servers.  This is actually a case where it's worth including the information,
-but not necessarily in the status code.
 
 ### See Also
 
