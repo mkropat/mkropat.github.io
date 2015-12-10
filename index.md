@@ -2,7 +2,7 @@
 layout: page
 ---
 
-A selection of the work I have on Github:
+Some stuff I've worked on:
 
 ### Projects
 
