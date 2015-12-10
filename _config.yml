@@ -4,7 +4,7 @@ email: mail@michael.kropat.name
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://www.codetinkerer.com" # the base hostname & protocol for your site
 twitter_username: MichaelKropat
-github_username:  mkroapt
+github_username:  mkropat
 
 # Build settings
 markdown: redcarpet
