@@ -19,14 +19,14 @@ Some stuff I've worked on:
 
 ### Websites
 
-- [Is Shell Command ______ Portable?](http://mkropat.github.io/is-shell-portable/)
+- [Is Shell Command ______ Portable?](http://www.codetinkerer.com/is-shell-portable/)
 
 ### Presentations
 
-- [C#: What's a dynamic?](https://mkropat.github.io/presentation-whats-a-dynamic/)
-- [Chef Workshop: Getting Started With Chef](http://mkropat.github.io/presentation-chef-workshop/)
-- [Database Versioning: It Doesn't Have To Be Hard](http://mkropat.github.io/presentation-db-versioning/)
-- [JavaScript: The Why And How Of Strict Mode](http://mkropat.github.io/presentation-js-strict-mode/)
+- [C#: What's a dynamic?](https://www.codetinkerer.com/presentation-whats-a-dynamic/)
+- [Chef Workshop: Getting Started With Chef](http://www.codetinkerer.com/presentation-chef-workshop/)
+- [Database Versioning: It Doesn't Have To Be Hard](http://www.codetinkerer.com/presentation-db-versioning/)
+- [JavaScript: The Why And How Of Strict Mode](http://www.codetinkerer.com/presentation-js-strict-mode/)
 
 ### Gists
 
