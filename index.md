@@ -54,6 +54,7 @@ Some stuff I've worked on:
 
 #### Windows
 
+- [autoupdate.bat](https://gist.github.com/mkropat/d0f6135d1e754a16b980) — hands-off script to fully patch a fresh Windows install
 - [delete-temp-aspnet.ps1](https://gist.github.com/mkropat/8eaf13fb3dc76f4b7626) — delete all files in `Temporary ASP.NET Files` at boot
 - [DeleteQueue.bat](https://gist.github.com/mkropat/8d385f15936876ac151d) — fast-delete the files in the delete queue
 - [maintain-links.ps1](https://gist.github.com/mkropat/fa0bc9179c0610b84543) — automatically maintain shortcuts to files in subdirectories
