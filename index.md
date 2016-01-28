@@ -8,13 +8,14 @@ Some stuff I've worked on:
 
 - [dapper-invoice](https://github.com/mkropat/dapper-invoice) — billable-time invoice featuring style over substance
 - [`jumpapp`](https://github.com/mkropat/jumpapp) — run-or-raise application switcher for any X11 desktop
+- [jumpthere.vim](https://github.com/mkropat/vim-jumpthere) — lightweight project switcher for Vim
 - [luks-mount](https://github.com/mkropat/luks-mount) — teach mount(8) to open LUKS containers
 - [sh-realpath](https://github.com/mkropat/sh-realpath) — a portable, pure shell implementation of realpath
 - [`shpy`](https://github.com/mkropat/shpy) — spies and stubs for shell unit testing
 - [SSLfie](https://github.com/mkropat/sslfie) — generate self-signed x.509 certificates for use with SSL/TLS
 - [standalone-dovecot-imap](https://github.com/mkropat/standalone-dovecot-imap) — keep a local IMAP mirror, painlessly
+- [uniformity.vim](https://github.com/mkropat/vim-uniformity) — convert indentation+whitespace across a project to be consistent
 - [vim-dwiw2015](https://github.com/mkropat/vim-dwiw2015) — minimal Vim distribution providing modern defaults
-- [vim-jumpthere](https://github.com/mkropat/vim-jumpthere) — lightweight project switcher for Vim
 - [VSPerformanceTracker](https://github.com/mkropat/VSPerformanceTracker) — Visual Studio extension for optimizing development time
 
 ### Websites
