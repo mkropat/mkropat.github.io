@@ -24,10 +24,10 @@ Some stuff I've worked on:
 
 ### Presentations
 
-- [C#: What's a dynamic?](https://www.codetinkerer.com/presentation-whats-a-dynamic/)
-- [Chef Workshop: Getting Started With Chef](http://www.codetinkerer.com/presentation-chef-workshop/)
-- [Database Versioning: It Doesn't Have To Be Hard](http://www.codetinkerer.com/presentation-db-versioning/)
-- [JavaScript: The Why And How Of Strict Mode](http://www.codetinkerer.com/presentation-js-strict-mode/)
+- [C#: What's a dynamic?](/presentation-whats-a-dynamic/)
+- [Chef Workshop: Getting Started With Chef](/presentation-chef-workshop/)
+- [Database Versioning: It Doesn't Have To Be Hard](/presentation-db-versioning/)
+- [JavaScript: The Why And How Of Strict Mode](/presentation-js-strict-mode/)
 
 ### Gists
 
