@@ -7,4 +7,4 @@ twitter_username: MichaelKropat
 github_username:  mkropat
 
 # Build settings
-markdown: redcarpet
+markdown: kramdown
