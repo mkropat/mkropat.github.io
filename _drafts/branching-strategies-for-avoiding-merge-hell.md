@@ -12,10 +12,11 @@ but I haven't seen much in the way of advice that:
 2. Takes advantage of [Pull Requests][github-pull-requests] and [Issues][github-issues], and…
 3. Makes it easy to do [code reviews][code-reviews], where…
 4. Everyone is touching the same areas of code (even when working on different stories), and…
-5. Supports releasing different features at different times, and yet somehow…
-6. Avoids time-consuming merges and difficult-to-resolve merge conflicts
+5. Keeps `master` deployable at all times, all the while…
 
-In short, I want to help you avoid this:
+__Avoiding time-consuming merges and difficult-to-resolve merge conflicts__
+
+In short, I want to help you not end up like this:
 
 ![git guitar hero](https://twitter.com/HenryHoffman/status/694184106440200192)
 
@@ -63,8 +64,8 @@ Some advantages of the pull request workflow:
 The pull-request workflow works great when:
 
 - Work on no other story will be touching the same areas of the codebase
-- No other feature branch needs to include the commits in the pull request
-  before the pull request is merged to `master`
+- No other feature branch needs to include commits from the pull request before
+  the pull request is merged to `master`
 - The code can be released with little-to-no coordination with any other story
 
 ### Best Practice: Frequent Merges From Master
@@ -77,14 +78,13 @@ than a day.__†††
 
 ![simple-feaeture-branch-with-merge]()
 
-If you follow the rest of the advice in this post, your pull request shouldn't
-be touching the same code as any other recently merged pull request, so merge
-conflicts are unlikely, but somtimes it's going to happen anyway. The sooner
-you discover a conflict the sooner you can resolve it and the less time you
-spend writing code that compounds the conflicts.
+If you follow the rest of the advice in this post, merge conflicts are going to
+be unlikely, but sometimes it's going to happen anyway.  The sooner you
+discover a conflict the sooner you can resolve it and the less time you spend
+writing code that compounds the conflicts.
 
-Perhaps more dangerous than merge conflicts, there are also [semantic
-conflicts][semantic-conflicts]. These won't be caught by any tool. They can
+In addition to merge conflicts there are also [semantic
+conflicts][semantic-conflicts].  These won't be caught by any tool. They can
 only be caught by testing or manual review of the code.
 
 To minimize the risk of both types of merge issues, I recommend:
@@ -92,7 +92,7 @@ To minimize the risk of both types of merge issues, I recommend:
 1. Once a day, before continuing work on an existing feature branch, merge `master` into the branch††††
 2. Merge `master` into any feature branch before you start a code review or acceptance test
 
-### The Mayan Pyramid Of Doom
+### Mayan Pyramid Of Doom
 
 Pop quiz: what happens when a second merge is done in the following scenario?
 
@@ -100,25 +100,80 @@ Pop quiz: what happens when a second merge is done in the following scenario?
 
 In some version control systems, the second merge [will result in a merge
 conflict][svn-merge-conflict] because the first commit will be applied again
-even though it was already applied. So what about git? Will the second merge
-introduce a conflict?
+even though it already exists in the destination branch. So what about git?
+Will the second merge introduce a conflict?
 
 Nope. Git is smart about merging branches with a shared history. No matter how
 many branches you have and no matter how many times you merge any branch with
 any other branch, git will never introduce a merge conflict by attempting to
-re-apply a commit that already exists in the destinatino branch's history.†††††
+re-apply a commit that already exists in the destination branch's history.†††††
 
-Because git is so smart, it introduces a new way to shoot yourself in the foot.
-I'm going to tell you a story about it. It all starts innocently enough:
+Because git is so smart, it introduces a new way to shoot yourself in the foot,
+and I'm going to tell you a story about it.
 
-![pyramid-start]()
+It all starts innocently enough:
 
+![pyramid-base]()
 
+Our first developer, Ada, starts work on `some-feature` just like in the pull
+request workflow.
 
+Ada's coworker, Charles, wants to start work on `second-feature` but realizes
+his change depends on some of the code Ada wrote for `some-feature`.  Since Ada
+is more or less done with `some-feature`, Charles creates the `second-feature`
+branch by branching off of `some-feature`:
 
-Not to be confused with the [other pyramid of doom][callbacks-pyramid].
+![pyramid-1]()
+
+This seems fine. We already know that merging `second-feature` to `master`
+won't cause a merge conflict even if `some-feature` has already been merged to
+`master`. And as far doing the code review on `second-feature`, since we know
+that `some-feature` will be merged to `master` soon, we can just create a
+second pull request from `second-feature` into `master`. At first, the
+`second-feature` pull request will contain all the commits of `some-feature`,
+which will be confusing, but once the `some-feature` pull request is merged to
+`master`, those commits will disappear from the `second-feature` pull request
+like we want.
+
+However, while waiting for a code review on `some-feature`, Ada stars work on
+`third-feature`, and since it depends on code in `second-feature` she creates
+her new branch like so:
+
+![pyramid-2]()
+
+At this point, the pattern has been established. When coworkers Douglas and
+Grace free up on other tasks, they jump in to help on the project with
+`third-feature` and `fourth-feature`:
+
+![pyramid-4]()
+
+The final complication: Ada and Charles assumed that `some-feature` would be
+merged to `master` before `second-feature`. But it turns out after discussion
+that we don't want to release any of the related features until they've all
+been tested together.  So much for code reviewing each story using a pull
+request from the feature branch to `master`.
+
+Without forethought, it's easy to end up with what my coworker [David
+McGrath][david-mcgrath] dubs the Mayan Pyramid of Doom:
+
+![mayan-pyramid-of-doom]()
+
+(Not to be confused with the [other pyramid of doom][callbacks-pyramid].)
 
 ### Solution: Feature Flags
+
+What if I told you there was a foolproof way to prevent just about all merge conflicts?
+
+There is.
+
+It's simple: stop using branches.
+
+No branches means no merge confilcts, unless two developers are literally
+working on the same code at the same time.
+
+Believe it or not, that's what most developers did in the early days of version
+control, back [before there was sane merging of feature
+branches][svn-merge-tracking].
 
 ### Solution: Merge To Integration Branch
 
@@ -126,7 +181,9 @@ Not to be confused with the [other pyramid of doom][callbacks-pyramid].
 
 ### Solution: Continuous Integration Branch
 
-Have you heard of "continuous integration"? 
+Everyone knows what "continuous integration" is, right? That's where you run
+[Jenkins][jenkins] or [TeamCity][teamcity] on a server so it can build and test
+your code every time a developer pushes some commits, right?
 
 ### Bonus Content: Michael's Guide To Merge vs Rebase Hygiene
 
@@ -142,10 +199,10 @@ into the genre with: [merge vs rebase][merge-vs-rebase].
 If the words "merge vs rebase" mean nothing to you, then you can probably skip
 this section and continue to live your life happily.
 
-If the readability of your commit history is something you're optimizing for,
-that's cool too. Whether you merge or rebase is largely orthagonal to the
+But if the readability of your commit history is something you're optimizing
+for, that's cool too. Whether you merge or rebase is largely orthagonal to the
 strategies presented in this post. In this post I give instructions that follow
-the merge method because it's easier to explain. However, while reading along
+the merge method because it's easier to explain.  However, while reading along
 in your head, feel free to:
 
 - Replace:
@@ -162,9 +219,13 @@ in your head, feel free to:
 
   with:
 
-  > squash `feature-branch` into a single commit and fast-forward merge `master`/`integration-branch` to it
+  > squash `feature-branch` into one or more logical commits and fast-forward merge `master`/`integration-branch` to it
 
   (but only if you're obsessed with linear history)
+
+Personally I rebase when it's easy (and guaranteed to not mess anyone else up),
+while the rest of the time I just merge. Having a clean, linear history is nice
+but it's rare that I look at it. Most of the time 
 
 ### Notes
 
@@ -176,7 +237,7 @@ in your head, feel free to:
 
 †††† This could probably be automated with the right tool. I dream of a GitHub hook that runs on any commit to `master` (or any integration branch) and — using temporary scratch branches — attempts to merge the latest `master` commit into each feature branch. If the merge succeeds, the original feature branch is left untouched (to avoid filling the commit history with unimportant merge commits). If the merge fails, a comment is left on the pull request warning of the inevitable merge conflict. For bonus points, the hook could run the full automated test suite on each scratch branch and warn of any tests that will fail as a result of the merge.
 
-††††† Not quite an exception, but still a gotcha to be aware of: if you merge branch A into B, revert the merge in B, make a change in A without merging B and without reverting the revert, then try to merge A into B again, you will get a merge conflict. The other "exception" is if you're rebasing in such a way to change the commit hashes of commits that have already been merged. But at least when you're rebasing without knowing what you're doing, it's understood that you're going to shoot yourself in the foot.
+††††† So long as you stick to merging — commands like cherry-pick, revert, and rebase can introduce non-obvious merge confilcts if you don't know what you're doing.
 
 #### References
 
@@ -201,6 +262,10 @@ in your head, feel free to:
 [merge-vs-rebase]: https://news.ycombinator.com/item?id=6456390
 [semantic-conflicts]: http://martinfowler.com/bliki/SemanticConflict.html
 [svn-merge-conflict]: http://svn.gnu.org.ua/svnbook/svn.branchmerge.copychanges.html#svn.branchmerge.copychanges.bestprac.track
+[jenkins]: http://jenkins-ci.org/
+[teamcity]: http://www.jetbrains.com/teamcity/
+[david-mcgrath]: https://twitter.com/mavtak
+[svn-merge-tracking]: http://blog.red-bean.com/sussman/?p=92
 
 #### Bibliography
 
