@@ -10,9 +10,9 @@ but I haven't seen much in the way of advice that:
 
 1. Works on teams of ~4-8 people, that…
 2. Takes advantage of [Pull Requests][github-pull-requests] and [Issues][github-issues], and…
-3. Makes it easy to do [code reviews][code-reviews], where…
-4. Everyone is touching the same areas of code (even when working on different stories), and…
-5. Keeps `master` deployable at all times, all the while…
+3. Makes it easy to do [code reviews][code-reviews], and…
+4. Keeps `master` deployable at all times, even when…
+5. Everyone is touching the same areas of code, all the while…
 
 __Avoiding time-consuming merges and difficult-to-resolve merge conflicts__
 
@@ -80,12 +80,14 @@ than a day.__†††
 
 If you follow the rest of the advice in this post, merge conflicts are going to
 be unlikely, but sometimes it's going to happen anyway.  The sooner you
-discover a conflict the sooner you can resolve it and the less time you spend
-writing code that compounds the conflicts.
+discover a conflict then the sooner you can resolve it and the less time you
+spend writing code that compounds the conflicts.
 
-In addition to merge conflicts there are also [semantic
-conflicts][semantic-conflicts].  These won't be caught by any tool. They can
-only be caught by testing or manual review of the code.
+Besides, it's not like it's hard to run one merge command. You just have to remember to do.
+
+Also worth mentioning is that in addition to merge conflicts there are also
+[semantic conflicts][semantic-conflicts].  These won't be caught by any tool.
+They can only be caught by testing or manual review of the code.
 
 To minimize the risk of both types of merge issues, I recommend:
 
@@ -160,11 +162,11 @@ McGrath][david-mcgrath] dubs the Mayan Pyramid of Doom:
 
 (Not to be confused with the [other pyramid of doom][callbacks-pyramid].)
 
-### Solution: Feature Flags
+### Solution: Feature Toggles
 
-What if I told you there was a foolproof way to prevent just about all merge conflicts?
+![what-if-told-you-you-can-live-in-a-world-without-merge-conflicts][fixme]
 
-There is.
+How?
 
 It's simple: stop using branches.
 
@@ -172,10 +174,101 @@ No branches means no merge confilcts, unless two developers are literally
 working on the same code at the same time.
 
 Believe it or not, that's what most developers did in the early days of version
-control, back [before there was sane merging of feature
-branches][svn-merge-tracking].
+control, back [before sane merging of feature branches had been
+invented][svn-merge-tracking].
+
+You might be thinking, "that's the dumbest idea I've ever heard." After all,
+there was a reason why we started using branches. How do you do code reviews?
+How do you prevent features from being released before they're ready? How do
+you keep `master` stable and deployable at all times?
+
+The first question I'll tackle later in this post. For now, I want to talk
+about a simple solution to the other two questions.
+
+Imagine we want to add a new widget to the UI called `Bar`. Instead of
+committing a change that looks like:
+
+```javascript
+ function loadApp() {
+   loadWidgetFoo();
++  loadWidgetBar();
+   loadWidgetQux();
+ }
+```
+
+Imagine if we committed a change that looked like:
+
+```javascript
+ function loadApp() {
+   loadWidgetFoo();
++  if (isFeatureEnabled(Features.BarWidget)) {
++    loadWidgetBar();
++  }
+   loadWidgetQux();
+ }
+```
+
+Elsewhere we could have a configuration file or database table that toggles
+`Features.BarWidget` on or off. That is the idea behind feature toggles in a
+nutshell. Basically it's a way of using code to control what code gets
+"released" instead of relying on the version control system.
+
+I don't want to spend too much time talking about feature toggles though, because
+this post is supposed to be about branching strategies, right? Besides, there's
+already a bunch of good info out there about feature toggles.
+
+The important takeaway for now is the idea that there are alternatives to the
+simple pull request workflow, and that there might not be one best strategy for
+all situations.
+
+Some advantages of feature toggles:
+
+- Minimal chance of merge conflicts — everyone can work in a single branch
+- Simple release strategy — the code gets released when and only when the feature toggle is turned on
+
+Feature toggles work great when:
+
+- The code that you're touching can be easily wrapped in one or more conditionals
 
 ### Solution: Merge To Integration Branch
+
+There's a simple fix for the Mayan Pyramid of Doom: create a dedicated branch
+off of `master` that feature branches can be merged into whenever a story gets
+done. I like to call the branch that everything gets merged into the
+"[integration][what-is-integration-branch]" branch.
+
+![features-into-integration-diagram](FIXME)
+
+Finally, when all the relevant features are merged into the integration branch,
+you can do some final integration testing then merge the integration branch to
+`master`.
+
+![integration-into-master-diagram](FIXME)
+
+Using an integration branch has other advantages as well. Because the code in a
+feature branch (off an integration branch) won't be released until the complete
+integration branch gets tested and merged, it's not as critical that the code
+be fully tested before it gets merged. If you want, you can merge the feature
+branch as soon as it's been code reviewed — you can always test the code after
+it's been merged and the sooner it's merged the sooner you'll catch conflicts
+with other feature branches.
+
+A word of caution: with feature branches it's important to merge from `master`
+into the branch on a regular basis. With integraiton branches it's even more
+critical to merge on a regular basis because the probability of conflicts goes
+up as the integration branch gets bigger and bigger over time.
+
+Some advantages of an integration branch:
+
+- Simple release strategy
+  - The code gets released when and only when the integration branch is merged
+  - Multiple related stories can be released simultaneously
+- Easy to code review — all the relevant commits appear in the feature branch pull request
+
+An integration branch works great when:
+
+- Each story is cleanly partitioned so that no two stories will touch the same areas of the codebase
+- There is at most one integration branch at any given time (having two or more large, long-lived branches sounds like a recipe for disaster)
 
 ### Refactoring Leads To Merge Conflicts
 
@@ -184,6 +277,27 @@ branches][svn-merge-tracking].
 Everyone knows what "continuous integration" is, right? That's where you run
 [Jenkins][jenkins] or [TeamCity][teamcity] on a server so it can build and test
 your code every time a developer pushes some commits, right?
+
+### A More Nuanced View
+
+The point of this post is not to sell you on the one true branching strategy
+for git.  In fact, I hope I've led you to the opposite conclusion: there are
+multiple viable strategies for avoiding mege problems and that each strategy
+has its own tradeoffs.
+
+In practice, there are way more strategies than I've mentioned, if for no other
+reason than that you can combine any of the above strategies in different ways.
+For example, many people use feature toggles in conjunction with feature
+branches so that you get the code review benefits of feature branches while
+preventing any branch (even if the associated code is not ready to release)
+from sticking around longer than a single story. Personally, when working on a
+team with a continuous integration branch, I like to use short lived branches
+(< 1 day) as a staging area until I have a logical commit that I rebase onto
+the integration branch.
+
+### tl;dr
+
+There are
 
 ### Bonus Content: Michael's Guide To Merge vs Rebase Hygiene
 
@@ -225,7 +339,7 @@ in your head, feel free to:
 
 Personally I rebase when it's easy (and guaranteed to not mess anyone else up),
 while the rest of the time I just merge. Having a clean, linear history is nice
-but it's rare that I look at it. Most of the time 
+but it's rare that I look at it. Most of the time FIXME
 
 ### Notes
 
@@ -266,6 +380,7 @@ but it's rare that I look at it. Most of the time
 [teamcity]: http://www.jetbrains.com/teamcity/
 [david-mcgrath]: https://twitter.com/mavtak
 [svn-merge-tracking]: http://blog.red-bean.com/sussman/?p=92
+[what-is-integration-branch]: http://stackoverflow.com/q/4428722/27581
 
 #### Bibliography
 
@@ -283,3 +398,5 @@ rebase:
 - http://www.jarrodspillers.com/git/2009/08/19/git-merge-vs-git-rebase-avoiding-rebase-hell.html
 - http://www.tugberkugurlu.com/archive/resistance-against-london-tube-map-commit-history-a-k-a--git-merge-hell
 - http://kentnguyen.com/development/visualized-git-practices-for-team/
+
+- continuous integration with feature toggles instead of feature branches - http://geekswithblogs.net/Optikal/archive/2013/02/10/152069.aspx
