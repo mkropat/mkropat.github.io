@@ -83,7 +83,8 @@ be unlikely, but sometimes it's going to happen anyway.  The sooner you
 discover a conflict then the sooner you can resolve it and the less time you
 spend writing code that compounds the conflicts.
 
-Besides, it's not like it's hard to run one merge command. You just have to remember to do.
+Besides, it's not like it's hard to run one merge command. The hardest part is
+making it a habit.
 
 Also worth mentioning is that in addition to merge conflicts there are also
 [semantic conflicts][semantic-conflicts].  These won't be caught by any tool.
@@ -233,9 +234,14 @@ Feature toggles work great when:
 ### Solution: Merge To Integration Branch
 
 There's a simple fix for the Mayan Pyramid of Doom: create a dedicated branch
-off of `master` that feature branches can be merged into whenever a story gets
-done. I like to call the branch that everything gets merged into the
+off of `master` to contain the changes for all the stories that need to be
+released together. For convenience, we'll call this dedicated branch an
 "[integration][what-is-integration-branch]" branch.
+
+You still develop in feature branches and you still create pull requests for
+code review. The only difference is that instead of creating a pull request
+from the feature branch into `master`, you create a pull request from the
+feature branch into the integration branch.
 
 ![features-into-integration-diagram](FIXME)
 
@@ -245,18 +251,16 @@ you can do some final integration testing then merge the integration branch to
 
 ![integration-into-master-diagram](FIXME)
 
-Using an integration branch has other advantages as well. Because the code in a
-feature branch (off an integration branch) won't be released until the complete
-integration branch gets tested and merged, it's not as critical that the code
-be fully tested before it gets merged. If you want, you can merge the feature
-branch as soon as it's been code reviewed — you can always test the code after
-it's been merged and the sooner it's merged the sooner you'll catch conflicts
-with other feature branches.
+__Pro Tip:__ As soon as you're done the code review on a feature branch, go
+ahead and merge it into the integration branch. Any sort of manual/acceptance
+testing can be done later off of the integration branch†††††††. The idea is to
+reduce the chance of merge conflicts by reducing the amount of time feature
+branches stay unmerged.
 
-A word of caution: with feature branches it's important to merge from `master`
-into the branch on a regular basis. With integraiton branches it's even more
-critical to merge on a regular basis because the probability of conflicts goes
-up as the integration branch gets bigger and bigger over time.
+__Warning:__ with feature branches it's important to merge from `master` into
+the branch on a regular basis. With integraiton branches it's doubly important
+to merge on a regular basis because the probability of conflicts goes up as the
+integration branch diff gets bigger and bigger over time.
 
 Some advantages of an integration branch:
 
@@ -268,15 +272,63 @@ Some advantages of an integration branch:
 An integration branch works great when:
 
 - Each story is cleanly partitioned so that no two stories will touch the same areas of the codebase
-- There is at most one integration branch at any given time (having two or more large, long-lived branches sounds like a recipe for disaster)
+- There is at most one integration branch at any given time††††††
+  - (Having two or more large, long-lived branches sounds like a recipe for disaster)
 
-### Refactoring Leads To Merge Conflicts
+### Can't We Just Plan Stories Better?
+
+Are we tackling the wrong problem? Maybe we could get better at dividing up and
+sequencing stories so that no two stories will ever be pulled in at the same
+time that require changing the same areas of code. No overlapping changes means
+no merge conflicts.
+
+Answer: no.
+
+I don't discourage anyone from trying to improve their planning, but it's a bad
+idea to rely on planning to prevent overlapping changes in differnet stories,
+and that's not just because fortune telling is notoriously hard.
+
+The reason is refactoring. When you make changes, it's inevitable you will
+outgrow the existing abstractions in your code. A good programmer notices this
+and changes the abstraction so that both the new and the existing code makes
+sense together. The problem with this kind of refactoring is that it tends to
+involve changing code in lots of places outside of the areas strictly required
+for the story you're working on. Normally this isn't a problem because you have
+automated tests to prevent accidental regressions. But it becomes a problem
+when the changes from the refactoring overlap with changes in a feature branch
+on another story.
+
+So you're left with one of two outcomes:
+
+1. You proceed with the refactoring that does cause a merge conflict later on, which is what we're trying to avoid, or...
+2. You fear that any given refactoring may cause a merge conflict later, so you don't do it, which in the long run can be even worse than the occasional merge hell
 
 ### Solution: Continuous Integration Branch
 
-Everyone knows what "continuous integration" is, right? That's where you run
+Everyone knows what "continuous integration" means, right? That's where you run
 [Jenkins][jenkins] or [TeamCity][teamcity] on a server so it can build and test
 your code every time a developer pushes some commits, right?
+
+That is, no doubt, a highly useful practice. It may be illuminating, however,
+to look at how the Extreme Programming movement (a precursor to today's Agile)
+defined "continuous integration" back in 1996:
+
+> Developers should be __integrating and commiting code into the code
+> repository every few hours__, when ever possible. In any case never hold onto
+> changes for more than a day.
+
+and
+
+> Continuous integration avoids or detects compatibility problems early.
+> Integration is a "pay me now or pay me more later" kind of activity. That is,
+> if you integrate throughout the project in small amounts you will not find
+> your self trying to integrate the system for weeks at the project's end while
+> the deadline slips by. Always work in the context of the latest version of
+> the system.
+
+(Emphasis mine.)
+
+At the time, that advice was aimed at developers who kept changes on their local PC days or weeks at a time before pushing.
 
 ### A More Nuanced View
 
@@ -290,10 +342,10 @@ reason than that you can combine any of the above strategies in different ways.
 For example, many people use feature toggles in conjunction with feature
 branches so that you get the code review benefits of feature branches while
 preventing any branch (even if the associated code is not ready to release)
-from sticking around longer than a single story. Personally, when working on a
-team with a continuous integration branch, I like to use short lived branches
-(< 1 day) as a staging area until I have a logical commit that I rebase onto
-the integration branch.
+from sticking around any longer than a single story. A personal example is that
+when working on a team with a continuous integration branch, I like to use
+short lived branches (< 1 day) as a staging area until I have a logical commit
+that I rebase onto the integration branch.
 
 ### tl;dr
 
@@ -349,9 +401,13 @@ but it's rare that I look at it. Most of the time FIXME
 
 ††† Before you object with, "always rebase instead of merge", please read [Michael's Guide To Merge vs Rebase Hygiene]().
 
-†††† This could probably be automated with the right tool. I dream of a GitHub hook that runs on any commit to `master` (or any integration branch) and — using temporary scratch branches — attempts to merge the latest `master` commit into each feature branch. If the merge succeeds, the original feature branch is left untouched (to avoid filling the commit history with unimportant merge commits). If the merge fails, a comment is left on the pull request warning of the inevitable merge conflict. For bonus points, the hook could run the full automated test suite on each scratch branch and warn of any tests that will fail as a result of the merge.
+†††† This could probably be automated with the right tool. I dream of a GitHub hook that runs on every commit and — using temporary scratch branches — attempts to merge the commit with every other feature branch. If the merge fails, a comment is left on the associated pull requests warning of the inevitable merge conflict. For bonus points if the merge succeeds, the hook could run the full automated test suite on each scratch branch and warn of any tests that will fail as a result of the merge.
 
 ††††† So long as you stick to merging — commands like cherry-pick, revert, and rebase can introduce non-obvious merge confilcts if you don't know what you're doing.
+
+†††††† The one exception to this rule is when the group of stories you are working on will span multiple release milestones. Then you might have to create `milestone-1` and `milestone-2` integration branches for the differnet releases. The important thing is that you merge `master` into `milestone-1` and merge `milestone-1` into `milestone-2` frequently. Later you might have to create a `milestone-3` integration branch, but by that time hopefully `milestone-1` will have been released and merged to `master`, so in practice you shouldn't need to have more than two milestone integration branches alive at any given time.
+
+††††††† Or a snapshot (tag/branch) off of the integration branch if you're having trouble with the integration branch being too moving a target.
 
 #### References
 
