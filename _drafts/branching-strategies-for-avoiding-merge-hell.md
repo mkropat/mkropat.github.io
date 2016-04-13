@@ -239,7 +239,7 @@ released together. For convenience, we'll call this dedicated branch an
 "[integration][what-is-integration-branch]" branch.
 
 You still develop in feature branches and you still create pull requests for
-code review. The only difference is that instead of creating a pull request
+code reviews. The only difference is that instead of creating a pull request
 from the feature branch into `master`, you create a pull request from the
 feature branch into the integration branch.
 
@@ -257,12 +257,13 @@ testing can be done later off of the integration branch†††††††. Th
 reduce the chance of merge conflicts by reducing the amount of time feature
 branches stay unmerged.
 
-__Warning:__ with feature branches it's important to merge from `master` into
-the branch on a regular basis. With integraiton branches it's doubly important
-to merge on a regular basis because the probability of conflicts goes up as the
-integration branch diff gets bigger and bigger over time.
+__Warning:__ with normal feature branches it's important to merge from `master`
+into the branch on a regular basis. With integraiton branches it's doubly
+important to merge in `master` on a regular basis because the probability of
+conflicts goes up as the integration branch diff gets bigger and bigger over
+time.
 
-Some advantages of an integration branch:
+Some advantages of using an integration branch:
 
 - Simple release strategy
   - The code gets released when and only when the integration branch is merged
@@ -300,8 +301,8 @@ on another story.
 
 So you're left with one of two outcomes:
 
-1. You proceed with the refactoring that does cause a merge conflict later on, which is what we're trying to avoid, or...
-2. You fear that any given refactoring may cause a merge conflict later, so you don't do it, which in the long run can be even worse than the occasional merge hell
+1. You proceed with the refactoring that will likely cause a merge conflict later on, which is what we're trying to avoid, or...
+2. You fear that any given refactoring may cause a merge conflict later, so you don't do it, which in the long run may be even worse than the occasional merge hell
 
 ### Solution: Continuous Integration Branch
 
@@ -311,13 +312,25 @@ your code every time a developer pushes some commits, right?
 
 That is, no doubt, a highly useful practice. It may be illuminating, however,
 to look at how the Extreme Programming movement (a precursor to today's Agile)
-defined "continuous integration" back in 1996:
+[defined "continuous integration" back in 1997][xp-continuous-integration]:
 
 > Developers should be __integrating and commiting code into the code
 > repository every few hours__, when ever possible. In any case never hold onto
 > changes for more than a day.
 
-and
+At the time, that advice was aimed at developers who kept changes on their
+local PC for days or weeks at a time before committing them. If you're
+thinking, "I commit several times a day, that doesn't apply to me," I have
+a question for you:
+
+What's the difference between work sitting on someone's computer for days
+before committing to `master` and work sitting in your feature branch for days
+at a time? Compared to changes sitting on local PCs for days, how much more
+often do the changes in your feature branch get integrated with changes in
+other feature branches?
+
+In case you're wondering why "developers should be integrating code every few
+hours", the Extreme Programming site goes on to say:
 
 > Continuous integration avoids or detects compatibility problems early.
 > Integration is a "pay me now or pay me more later" kind of activity. That is,
@@ -326,16 +339,19 @@ and
 > the deadline slips by. Always work in the context of the latest version of
 > the system.
 
-(Emphasis mine.)
+We've already talked about one example of continuous integration: through the
+use of feature toggles everyone can commit to `master` 100% of the time.
 
-At the time, that advice was aimed at developers who kept changes on their local PC days or weeks at a time before pushing.
+It's also possible to practice continuous integration when using an integration branch.
+Instead of using feature flags to control what code gets released, if you have a set of stories that will be released together you can use an integration branch. 
+Instead of using feature flags, you can use a branch to practice continuous integration.
 
 ### A More Nuanced View
 
 The point of this post is not to sell you on the one true branching strategy
-for git.  In fact, I hope I've led you to the opposite conclusion: there are
-multiple viable strategies for avoiding mege problems and that each strategy
-has its own tradeoffs.
+for git.  In fact, I hope I've led you to the opposite conclusion: that there
+are multiple viable strategies for avoiding mege problems and that each
+strategy has its own tradeoffs.
 
 In practice, there are way more strategies than I've mentioned, if for no other
 reason than that you can combine any of the above strategies in different ways.
@@ -437,6 +453,7 @@ but it's rare that I look at it. Most of the time FIXME
 [david-mcgrath]: https://twitter.com/mavtak
 [svn-merge-tracking]: http://blog.red-bean.com/sussman/?p=92
 [what-is-integration-branch]: http://stackoverflow.com/q/4428722/27581
+[xp-continuous-integration]: http://www.extremeprogramming.org/rules/integrateoften.html
 
 #### Bibliography
 
