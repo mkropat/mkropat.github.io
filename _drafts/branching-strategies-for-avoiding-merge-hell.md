@@ -461,6 +461,7 @@ but it's rare that I look at it. Most of the time FIXME
 [code-reviews-conventional-wisdom](http://programmers.stackexchange.com/questions/121664/when-to-do-code-reviews-when-doing-continuous-integration)
 - http://programmers.stackexchange.com/questions/187512/is-a-merging-strategy-like-git-flow-really-an-anti-pattern/187520#187520
 - http://martinfowler.com/bliki/FeatureBranch.html
+- http://www.grahamlea.com/2013/11/git-mercurial-anti-agile-continuous-integration/
 
 how git works:
 
@@ -473,3 +474,6 @@ rebase:
 - http://kentnguyen.com/development/visualized-git-practices-for-team/
 
 - continuous integration with feature toggles instead of feature branches - http://geekswithblogs.net/Optikal/archive/2013/02/10/152069.aspx
+
+promiscuous integration:
+- https://dzone.com/articles/promiscuous-integration-vs
