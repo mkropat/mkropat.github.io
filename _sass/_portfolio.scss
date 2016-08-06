@@ -1,0 +1,77 @@
+.portfolio-entry {
+    margin-top: 4ex;
+    margin-bottom: 7ex;
+}
+
+.portfolio-entry:after {
+    content: '.';
+    clear: both;
+    height: 0;
+    display: block;
+    visibility: hidden;
+}
+
+.portfolio-entry:last-child {
+    margin-bottom: 4ex;
+}
+
+.portfolio-feature {
+    border: 1px solid #000;
+    float: left;
+    margin-right: 2em;
+    width: 28vw;
+    max-height: 21vw;
+
+    overflow: hidden;
+}
+
+.portfolio-feature > img {
+    display: block;
+    max-width: 100%;
+}
+
+.portfolio-feature > a:hover,
+.portfolio-feature > a:active,
+.portfolio-feature > a:visited,
+.portfolio-feature > a:link {
+    text-decoration: none;
+}
+.portfolio-feature > a > pre {
+    background-color: #fff;
+    margin-bottom: 0;
+    overflow-x: hidden;
+    line-height: 1;
+}
+
+.portfolio-feature.powershell > a > pre {
+    background-color: #011845;
+}
+
+.portfolio-feature.sh > a > pre {
+    background-color: #000;
+}
+
+.portfolio-feature > a > pre > code {
+    background-color: #fff;
+    color: #000;
+    font-size: 0.7vw;
+}
+.portfolio-feature > a > pre > code {
+    background-color: #fff;
+    color: #000;
+    font-size: 0.7vw;
+}
+
+.portfolio-feature.powershell > a > pre > code {
+    background-color: #011845;
+    color: #fff;
+}
+
+.portfolio-feature.sh > a > pre > code {
+    background-color: #000;
+    color: #fff;
+}
+
+.portfolio-description {
+    margin-left: calc(28vw + 2em);
+}
