@@ -52,3 +52,21 @@ $on-laptop:        800px;
 p + h1, p + h2, p + h3 {
     margin-top: 30px;
 }
+
+.shrunken-image {
+    height: 450px;
+    width: auto;
+}
+
+.border {
+    border: 1px solid #aaa;
+}
+
+.center {
+    display: block;
+    margin: 0 auto;
+}
+
+strong {
+    font-weight: bold;
+}
