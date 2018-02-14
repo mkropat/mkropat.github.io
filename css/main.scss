@@ -70,3 +70,13 @@ p + h1, p + h2, p + h3 {
 strong {
     font-weight: bold;
 }
+
+.caption {
+    text-align: center;
+}
+
+.retro-side-photo {
+    float: right;
+    margin-left: 10px;
+    max-width: 30%;
+}
