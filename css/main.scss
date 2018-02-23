@@ -48,3 +48,7 @@ $on-laptop:        800px;
         "portfolio",
         "syntax-highlighting"
 ;
+
+p + h1, p + h2, p + h3 {
+    margin-top: 30px;
+}
