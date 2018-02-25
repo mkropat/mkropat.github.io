@@ -140,33 +140,6 @@ Options:
   </div>
 </div>
 
-<div class="portfolio-entry">
-  <div class="portfolio-feature">
-    <a href="https://github.com/mkropat/vim-dwiw2015"><img src="assets/index/dwiw2015.png"/></a>
-  </div>
-  <div class="portfolio-description">
-    <h4><a href="https://github.com/mkropat/vim-dwiw2015">dwiw2015.vim</a></h4>
-    <p>minimal Vim distribution providing modern defaults</p>
-  </div>
-</div>
-
-<div class="portfolio-entry">
-  <div class="portfolio-feature">
-    <a href="https://github.com/mkropat/VSPerformanceTracker">
-      <pre><code>Subject,Branch,EventType,Start,Duration
-C:\mkropat\VSPerformanceTracker\VSPerformanceTracker.sln,master,solution-load,12/30/2014 10:05:25 AM,00:00:06.6721816
-C:\mkropat\VSPerformanceTracker\VSPerformanceTracker.sln,master,build,12/30/2014 1:03:00 PM,00:00:00.1650973
-C:\Projects\WebApplication1\WebApplication1.sln,"",solution-load,12/30/2014 1:08:17 PM,00:00:03.2236001
-C:\Projects\WebApplication1\WebApplication1.sln,"",build,12/30/2014 1:08:32 PM,00:00:00.1369996
-C:\Projects\WebApplication1\WebApplication1.sln,"",debug-started,12/30/2014 1:08:33 PM,00:00:04.7151503</code></pre>
-    </a>
-  </div>
-  <div class="portfolio-description">
-    <h4><a href="https://github.com/mkropat/VSPerformanceTracker">VSPerformanceTracker</a></h4>
-    <p>Visual Studio extension for tracking build and load times</p>
-  </div>
-</div>
-
 </div>
 
 ### Other Projects
