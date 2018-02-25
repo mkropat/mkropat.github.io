@@ -2,7 +2,7 @@
 layout: page
 ---
 
-Some stuff I've worked on:
+Some stuff I've published:
 
 <div class="portfolio">
 
@@ -137,6 +137,16 @@ Options:
   <div class="portfolio-description">
     <h4><a href="https://github.com/mkropat/sslfie">SSLfie</a></h4>
     <p>generate self-signed x.509 certificates for use with SSL/TLS</p>
+  </div>
+</div>
+
+<div class="portfolio-entry">
+  <div class="portfolio-feature">
+    <a href="https://github.com/mkropat/TidyDesktopMonster"><img src="https://raw.githubusercontent.com/mkropat/TidyDesktopMonster/master/docs/logo.png"/></a>
+  </div>
+  <div class="portfolio-description">
+    <h4><a href="https://github.com/mkropat/TidyDesktopMonster">Tidy Desktop Monster</a></h4>
+    <p>prevent shortcuts from cluttering your Windows desktop ever again</p>
   </div>
 </div>
 
