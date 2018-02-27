@@ -1,5 +1,12 @@
+plugins:
+  - jekyll-feed
+  - jekyll-remote-theme
+
+remote_theme: jekyll/minima
+
 # Site settings
 title: codetinkerer.com
+author: Michael Kropat
 email: mail@michael.kropat.name
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://www.codetinkerer.com" # the base hostname & protocol for your site
