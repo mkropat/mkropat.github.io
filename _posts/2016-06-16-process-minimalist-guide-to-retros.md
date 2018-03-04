@@ -39,6 +39,8 @@ at any other company in history, and who are experts at finding patterns
 __could not find any strong patterns in what combination of individuals make up
 an effective team.__ “The ‘who’ part of the equation didn’t seem to matter.”
 
+<!--more-->
+
 However, the researchers __did find one attribute that effective teams shared: group
 norms.__
 

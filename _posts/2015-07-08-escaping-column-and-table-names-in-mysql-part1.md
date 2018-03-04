@@ -16,6 +16,8 @@ still arises:
 - I want to [perform some kind of advanced query that's not exposed via the ORM](https://technet.microsoft.com/en-us/library/ms190766)
 - I'm working in a legacy codebase that does not offer an ORM
 
+<!--more-->
+
 (The latter is how I came to visit the topic recently.)
 
 The trick with constructing SQL queries is that user-input typically needs to

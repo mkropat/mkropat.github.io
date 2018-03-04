@@ -9,6 +9,8 @@ The following is a braindump of what options there are for debugging Nuget
 packages not maintained by you. It's not particulary polished, but maybe it'll
 help someone.
 
+<!--more-->
+
 So you need two things to step-through code:
 
 1. The souce code, and...

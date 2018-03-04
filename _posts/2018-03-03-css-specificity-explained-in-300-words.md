@@ -21,6 +21,8 @@ If you've done much CSS, you've probably run into this issue:
 
 You added some CSS to make the element blue, but for some reason a CSS rule defined earlier in some library is overriding your style. What gives?
 
+<!--more-->
+
 The answer is that the selector with the higher CSS Specificity __won the game__.
 
 What are the rules of the game, you ask?

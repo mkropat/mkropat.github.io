@@ -5,6 +5,8 @@ date: 2016-11-6
 tags: angularjs reactjs trends
 ---
 
+<!--more-->
+
 At work we've got a large AngularJS codebase. It's on 1.x now. Someday we'll
 either [upgrade the existing code to Angular 2][angular2-upgrade] or start
 doing everything in React. __This post is not about your existing codebase.__

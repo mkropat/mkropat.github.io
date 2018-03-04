@@ -14,6 +14,8 @@ redirect the user to another page? `302`, or maybe `301`.
 
 Life is bliss, well… until someone tells you you’re not doing this REST thing. Next thing you know, you can’t sleep at night because you need to know if your new resource returns the RFC-compliant, [Roy-Fielding][roy-fielding]-approved status code. Is it just a `200` here? Or should it really be a `204 No Content`? No, definitely a `202 Accepted`… or is that a `201 Created`?
 
+<!--more-->
+
 What complicates matters is that the official HTTP/1.1 guidelines—the RFC—[was originally written in 1997][rfc-2068].† That’s the year you went surfing the cyberweb in Netscape Navigator on your 33.6kbps modem. It’s a little like trying to apply Sun Tzu’s Art of War to modern business strategy. Timeless advice, to be sure, but I haven’t yet figured out how The Five Ways to Attack With Fire are going to help me do market validation.
 
 ![retro screenshot][win98-rfc2068-annotated]

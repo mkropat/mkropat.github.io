@@ -11,6 +11,8 @@ to learn why you don't actually need an escaping function.*
 So you want a function to escape or validate user-input that is going to be
 inserted into a MySQL query as a column or table name?
 
+<!--more-->
+
 To get more concerte, let's imagine a hypothetical usage:
 
 ```csharp

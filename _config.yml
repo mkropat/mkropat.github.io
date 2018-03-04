@@ -13,6 +13,8 @@ url: "http://www.codetinkerer.com" # the base hostname & protocol for your site
 twitter_username: MichaelKropat
 github_username:  mkropat
 description: Home page of Michael Kropat
+show_excerpts: true
+excerpt_separator: <!--more-->
 
 # Build settings
 markdown: kramdown
