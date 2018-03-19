@@ -1,20 +1,26 @@
 plugins:
   - jekyll-feed
+  - jekyll-paginate
   - jekyll-remote-theme
+  - jekyll-seo-tag
 
-remote_theme: jekyll/minima
+remote_theme: mkropat/jekyll-theme-antisocial
 
 # Site settings
 title: codetinkerer.com
 author: Michael Kropat
+author_url: /about
 email: mail@michael.kropat.name
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://www.codetinkerer.com" # the base hostname & protocol for your site
-twitter_username: MichaelKropat
-github_username:  mkropat
-description: Home page of Michael Kropat
 show_excerpts: true
 excerpt_separator: <!--more-->
+header_pages:
+ - about.md
+ - projects.md
+
+twitter_username: MichaelKropat
+github_username:  mkropat
 
 # Build settings
 markdown: kramdown
