@@ -27,7 +27,7 @@ fetch('https://yourbank.example.com/money/transfer', {
 });
 ```
 
-This is the browser's [same-orign policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) at work protecting you. Other than HTML form submissions, which pre-dates the same-origin policy (and leads to [security issues][csrf]), generally everything in the browser honors the same-origin policy.
+This is the browser's [same-origin policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) at work protecting you. Other than HTML form submissions, which pre-dates the same-origin policy (and leads to [security issues][csrf]), generally everything in the browser honors the same-origin policy.
 
 Except for WebSockets. WTF.
 
