@@ -97,6 +97,16 @@ Tighampers</code></pre>
 </div>
 
 <div class="portfolio-entry">
+  <div class="portfolio-feature">
+    <a href="https://www.npmjs.com/package/secure-random-password"><img src="assets/index/secure-random-password.png"/></a>
+  </div>
+  <div class="portfolio-description">
+    <h4><a href="https://www.npmjs.com/package/secure-random-password">secure-random-password</a></h4>
+    <p>secure random password generator for the browser / Node.js</p>
+  </div>
+</div>
+
+<div class="portfolio-entry">
   <div class="portfolio-feature sh">
     <a href="https://github.com/mkropat/sh-realpath">
       <pre><code>$ source ./realpath.sh
