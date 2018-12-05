@@ -278,23 +278,32 @@ Instead, we can create a proxy object that wraps the real Dinero object. It will
 Since we already have a factory function, `nullableDinero`, which our code calls to create any Dinero objects, we have one place we can wrap any real Dinero objects in our new proxy object:
 
 ```javascript
-const nullableDinero = ({ amount, ...rest }) => {
-  if (amount === null) {
-    return nullDinero;
-  }
+const nullableDinero = ({ amount, ...rest }) =>
+  amount === null
+    ? nullDinero
+    : wrapDineroToBeNullAware(Dinero({ amount, ...rest }));
 
-  let realDinero = Dinero({ amount, ...rest });
+const wrapDineroToBeNullAware = (realDinero) => {
   let wrapper = Object.create(realDinero);  // delegate to realDinero by default
 
   for (let method of ['add', 'subtract']) { // extend specific methods
-    wrapper[method] = other => other === nullDinero
-      ? nullDinero
-      : realDinero[method].call(wrapper, other);
+    wrapper[method] = other =>
+      other === nullDinero
+        ? nullDinero
+        : wrapDineroToBeNullAware(realDinero[method].call(wrapper, other));
+  }
+
+  for (let method of ['multiply', 'divide']) {
+    wrapper[method] = other => wrapDineroToBeNullAware(
+      realDinero[method].call(wrapper, other)
+    );
   }
 
   return wrapper;
-};
+}
 ```
+
+__Note__: we have to wrap the Dinero return value from `add`, `multiply`, etc. in a new `nullableDinero` so that subsequent calls to `add`/`subtract` are also `nullDinero` aware.
 
 Let's try it:
 
@@ -312,6 +321,8 @@ And like that, we have extended Dinero, a third-party type, to work with the nul
 None of the patterns described in this post are must-use. A solution based on straightforward functional decomposition would have been perfectly adequate for the use case.
 
 However, when I look at the real code that I implemented following these patterns, I am pleased with the result. The null object pattern—especially in conjunction with null propagation—simplified the code. The biggest risk was in introducing a leaky abstraction, but that was avoided by using the proxy object pattern. All in all, a successful experiment.
+
+__Update 2018/12/5:__ It turns out the [first version][version-1] of this post had a bug (since fixed) that resulted in a leaky abstraction. Kind of telling, isn't it? I think the logic is good now. It shows the risk of trying to be clever and confident at the same time though 😃
 
 ### Appendix: Higher Fidelity Null Objects
 
@@ -362,3 +373,4 @@ I also experimented with a [theoretically higher fidelity pattern for implementi
 [null-object]: https://www.youtube.com/watch?v=29MAL8pJImQ
 [three-wise-monkeys]: https://en.wikipedia.org/wiki/Three_wise_monkeys
 [vaucanson-duck]: https://en.wikipedia.org/wiki/Digesting_Duck
+[version-1]: https://github.com/mkropat/mkropat.github.io/blob/fab2d1c66028504632af96fdb0e7a262ed2a9f0d/_posts/2018-12-04-null-object-pattern-3rd-party-types.md
