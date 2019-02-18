@@ -4,6 +4,9 @@
   RewriteRule ^passwords?$ /passwords/ [R,L]
   RewriteRule ^passwords/(.*) /password-site/$1 [L]
 
+  RewriteRule ^podcast?$ /podcast/ [R,L]
+  RewriteRule ^podcast/(.*) /GetPodcastLink/$1 [L]
+
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME}index.html !-f
   RewriteRule ^([^\.]+)$ $1.html [L]
