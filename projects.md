@@ -20,12 +20,22 @@ Some stuff I've published:
 
 <div class="portfolio-entry">
   <div class="portfolio-feature">
-    <a href="http://www.codetinkerer.com/is-shell-portable/">
+    <a href="https://www.codetinkerer.com/podcast/"><img src="assets/index/get-podcast-link.png"/></a>
+  </div>
+  <div class="portfolio-description">
+    <h4><a href="https://www.codetinkerer.com/podcast/">Get Podcast Link</a></h4>
+    <p>look up the feed URL given an iTunes or website link</p>
+  </div>
+</div>
+
+<div class="portfolio-entry">
+  <div class="portfolio-feature">
+    <a href="https://www.codetinkerer.com/is-shell-portable/">
       <img src="assets/index/is-shell-portable.png" />
     </a>
   </div>
   <div class="portfolio-description">
-    <h4><a href="http://www.codetinkerer.com/is-shell-portable/">Is Shell Command __ Portable?</a></h4>
+    <h4><a href="https://www.codetinkerer.com/is-shell-portable/">Is Shell Command __ Portable?</a></h4>
     <p>a survey of what shell commands are available from <tt>/bin/sh</tt> on different platforms</p>
   </div>
 </div>
@@ -93,6 +103,16 @@ Tighampers</code></pre>
   <div class="portfolio-description">
     <h4><a href="https://github.com/mkropat/MlkPwgen">MlkPwgen</a></h4>
     <p>secure random password generator for .NET and PowerShell</p>
+  </div>
+</div>
+
+<div class="portfolio-entry">
+  <div class="portfolio-feature">
+    <a href="https://www.codetinkerer.com/passwords/"><img src="assets/index/random-passwords.png"/></a>
+  </div>
+  <div class="portfolio-description">
+    <h4><a href="https://www.codetinkerer.com/passwords/">Random Passwords</a></h4>
+    <p>in-browser password generator built on <a href="https://www.npmjs.com/package/secure-random-password">secure-random-password</a></p>
   </div>
 </div>
 
