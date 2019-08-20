@@ -187,6 +187,7 @@ Options:
 ### Other Projects
 
 - [BetterWin32Errors](https://github.com/mkropat/BetterWin32Errors) — a better interface to the constants defined in winerror.h
+- [jekyll-theme-antisocial](https://github.com/mkropat/jekyll-theme-antisocial) — the theme used for this blog
 - [jumpthere.vim](https://github.com/mkropat/vim-jumpthere) — lightweight project switcher for Vim
 - [luks-mount](https://github.com/mkropat/luks-mount) — teach mount(8) to open LUKS containers
 - [`shpy`](https://github.com/mkropat/shpy) — spies and stubs for shell unit testing
