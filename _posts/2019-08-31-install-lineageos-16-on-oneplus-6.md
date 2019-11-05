@@ -11,6 +11,8 @@ No previous Android experience is necessary. Everything you need to know will be
 
 You will need a computer to be able to complete all the steps. With [one exception](/2019/08/31/install-lineageos-16-on-oneplus-6.html#recovering-bricked-phone), everything in this guide should work regardless of whether you are on Linux, OS&nbsp;X, or Windows.
 
+__Update 2019/11/5__: it has come to my attention that there is an issue with this guide. It works great for installing LineageOS on your phone. However, if you follow the exact steps outlined here you may run into issues when updating LineageOS to a newer version. I believe the issue occurs if you don't have the latest stock ROM flashed to both slots. When I have more time I would like to update the steps in this guide to ensure that updates will work. In the meanwhile, __you have been warned__.
+
 ### tl;dr
 
 1. [Update Your Phone To The Latest Version](/2019/08/31/install-lineageos-16-on-oneplus-6.html#step1) __(Optional)__
