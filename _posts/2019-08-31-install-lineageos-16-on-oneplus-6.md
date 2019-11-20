@@ -390,7 +390,7 @@ Congratulations, if you have made it this far you are practically done! The only
 1. Press __Reboot__
 1. Press __System__
 
-If it prompts you to install the TWRP app, you can install it if you want to, but I usually choose __Do Not Install__.
+If it prompts you to install the TWRP app, I recommend selecting __Do Not Install__. In theory it should be fine to install it, however a reader reported to me that when they tried it caused LineageOS to fail to boot. YMMV.
 
 ![screenshot](/assets/install-lineageos-16-on-oneplus-6/step-15-screenshot.jpg)
 
@@ -714,6 +714,8 @@ The reason why FastBoot mode is so brittle on the OnePlus 6, is probably because
 ### Credits
 
 The phone frame used in the diagrams [comes from Mauricio Allende][oneplus-6t-mockup].
+
+Thanks to Dima for reaching out with a warning that installing the TWRP app can result in a broken LineageOS installation.
 
 [7-zip]: https://www.7-zip.org/
 [aleph-qualcomm]: https://alephsecurity.com/2018/01/22/qualcomm-edl-1/
