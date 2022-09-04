@@ -10,9 +10,9 @@ remote_theme: mkropat/jekyll-theme-antisocial
 title: codetinkerer.com
 author: Michael Kropat
 author_url: /about
-email: mail@michael.kropat.name
+email: hello@kropat.email
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://www.codetinkerer.com" # the base hostname & protocol for your site
+url: "https://www.codetinkerer.com" # the base hostname & protocol for your site
 show_excerpts: true
 excerpt_separator: <!--more-->
 paginate: 5
