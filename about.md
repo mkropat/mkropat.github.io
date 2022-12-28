@@ -6,7 +6,9 @@ title: About
 
 ![west spanish peak](/assets/about/west-spanish-peak.jpg)
 
-My name is Michael. I'm a dude who tinkers with code. I am a recent transplant to Columbus, Ohio.
+My name is Michael. I have been working in the software industry for like 15+ years now. I've been tinkering with code even longer.
+
+Now that I live in Columbus, Ohio, I try to hit [CodeMash](https://www.codemash.org/) every year. Hit me up if you are going to be there, I like meeting readers of my blog.
 
 {% if site.email %}
 If you need to get in touch with me:
