@@ -5,7 +5,7 @@ date: 2018-3-19
 tags: presentation communication
 ---
 
-Everyone [hates][powerpoint-hate-1] [on][powerpoint-hate-2] [PowerPoint][powerpoint-hate-3]. There's much to hate about PowerPoint. At the end of the day though, it's just a tool.
+Everyone [hates][powerpoint-hate-1] on [PowerPoint][powerpoint-hate-3]. There's much to hate about PowerPoint. At the end of the day though, it's just a tool.
 
 I want to show you how to wield PowerPoint for good. However in order to do that, first we need to understand why PowerPoint is bad.
 
@@ -103,7 +103,6 @@ Here's the thing: it's OK if you forget to make that one joke during your presen
 [brain-rules]: https://brainrules.net/introduction/
 [photography-principles]: https://www.photographymad.com/pages/view/10-top-photography-composition-rules
 [powerpoint-hate-1]: https://www.canadianbusiness.com/innovation/stop-using-powerpoint/
-[powerpoint-hate-2]: http://www.sethgodin.com/freeprize/reallybad-1.pdf
 [powerpoint-hate-3]: https://www.wired.com/2003/09/ppt2/
 [rule-of-thirds]: https://www.cambridgeincolour.com/tutorials/rule-of-thirds.htm
 [rule-of-thirds-photo]: /assets/how-to-not-suck-with-powerpoint/vendeuse-d'arachides.jpg "Copyright 2008 Roman Bonnefoy - CC BY-SA 3.0"

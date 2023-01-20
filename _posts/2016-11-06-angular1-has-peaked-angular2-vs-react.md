@@ -55,7 +55,7 @@ influence:
 If you search for "angular vs react" you may run across [this
 post][learn-react-vs-angular] by Kamil Przeorski. The author has a React bias, but he posts some compelling data, including this graph of __technologies listed in Hacker News job postings over time__:
 
-[![Graph of frameworks in job postings][hn-whos-hiring-graph]][hn-whos-hiring]{: .center }
+![Graph of frameworks in job postings][hn-whos-hiring-graph]{: .center }
 
 We can learn a few things from this data:
 
@@ -81,7 +81,7 @@ Looking at Reddit statistics, we can start to tease out interest in Angular 1
 vs Angular 2 vs React by looking at the growth of the number of subscribers in
 the respective subreddits:
 
-[![Graph of subreddit growth][subreddit-growth-graph]][subreddit-growth]
+![Graph of subreddit growth][subreddit-growth-graph]
 
 That graph is a little noisy. The trends become clearer when we look at the
 __total number of subreddit subscribers over time__:
@@ -106,7 +106,7 @@ Sadly, I don't know of a tool that graphs the history of issues (or PRs) opened
 on a Github project over time, so instead have this graph of __Github stars
 over time__:
 
-[![Graph of Github stars over time][github-stars-graph]][github-stars]{: .center }
+![Graph of Github stars over time][github-stars-graph]{: .center }
 
 What I can reveal to you is the complete graph from the beginning, __Stack
 Overflow questions over time__ for all the relevant tags:

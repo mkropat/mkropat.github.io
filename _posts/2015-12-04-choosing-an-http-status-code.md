@@ -92,7 +92,6 @@ The hardest part of it all used to be deciding which code to return, but with th
 
 - [HTTP status code reference](https://httpstatuses.com/)
 - [HTTP status codes used by world-famous APIs][api-status-codes]
-- [HTTP status codes visualized as a subway map](http://restlet.com/http-status-codes-map)
 - [Status Codes To Cat Memes As a Service](https://http.cat/)
 - [Status Codes To Dog Memes As a Service](https://httpstatusdogs.com/)
 

@@ -28,7 +28,7 @@ go somewhere in the query, and that means you need to protect yourself from
 
 __Fun Fact__: SQL injection [has been known a known vulnerability since the
 late 90s][sql-phrack] and yet [it still][sql-vuln-1] [seems][sql-vuln-2] [to
-make][sql-vuln-3] [headlines][sql-vuln-4] in 2015.
+make][sql-vuln-3] headlines in 2015.
 
 Fortunately, the database connector has my back.  Even if I can't get an ORM
 for what I need to do, I've never heard of a situation† where the database
@@ -187,5 +187,3 @@ to learn how to write a function that escapes MySQL column and table names*
 [sql-vuln-1]: https://www.tripwire.com/state-of-security/latest-security-news/one-million-wordpress-websites-vulnerable-to-sql-injection-attack/
 [sql-vuln-2]: https://www.wordfence.com/blog/2015/03/woocommerce-sql-injection-vulnerability/
 [sql-vuln-3]: https://thenextweb.com/insider/2015/05/28/indian-music-streaming-service-gaana-hacked-millions-of-users-details-exposed/
-[sql-vuln-4]: http://www.thewhir.com/web-hosting-news/millions-wordpress-installations-risk-blind-sql-injection-popular-seo-plugin-yoast
-
