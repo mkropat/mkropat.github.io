@@ -155,7 +155,7 @@ anyone without data convince you otherwise.
 
 [angular-changelog]: https://github.com/angular/angular/blob/master/CHANGELOG.md
 [angular1-peak]: /assets/angular1-has-peaked-angular2-vs-react/angular1-peak.png
-[angular1-support]: http://stackoverflow.com/a/37037365/27581
+[angular1-support]: https://stackoverflow.com/a/37037365/27581
 [angular2-upgrade]: https://angular.io/docs/ts/latest/guide/upgrade.html
 [github-stars]: http://www.timqian.com/star-history/#angular/angular.js&facebook/react
 [github-stars-graph]: /assets/angular1-has-peaked-angular2-vs-react/github-stars.png
@@ -167,9 +167,9 @@ anyone without data convince you otherwise.
 [learn-react-vs-angular]: https://www.quora.com/Should-I-learn-React-or-Angular
 [r-angularjs]: https://www.reddit.com/r/angularjs/
 [r-angular2]: https://www.reddit.com/r/Angular2/
-[stackoverflow-trends]: http://data.stackexchange.com/stackoverflow/query/572979/technology-trends-of-questions-per-tag-per-month
+[stackoverflow-trends]: https://data.stackexchange.com/stackoverflow/query/572979/technology-trends-of-questions-per-tag-per-month
 [stackoverflow-trends-graph]: /assets/angular1-has-peaked-angular2-vs-react/stackoverflow-trends.png
 [subreddit-growth]: http://redditmetrics.com/r/reactjs#compare=angularjs+angular2
 [subreddit-growth-graph]: /assets/angular1-has-peaked-angular2-vs-react/subreddit-growth.png
 [subreddit-totals-graph]: /assets/angular1-has-peaked-angular2-vs-react/subreddit-totals.png
-[vue.js]: http://vuejs.org/
+[vue.js]: https://vuejs.org/

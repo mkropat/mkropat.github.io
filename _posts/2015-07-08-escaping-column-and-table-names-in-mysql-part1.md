@@ -180,12 +180,12 @@ to learn how to write a function that escapes MySQL column and table names*
 
 † Parameterized queries even work in VB6.  It's sad that I know that for a fact.
 
-†† Not entirely true.  If you contort your query, [you can specify column names indirectly](http://stackoverflow.com/a/13846257/27581)
+†† Not entirely true.  If you contort your query, [you can specify column names indirectly](https://stackoverflow.com/a/13846257/27581)
 
 [owasp-queries]: https://www.owasp.org/index.php/Query_Parameterization_Cheat_Sheet
 [sql-phrack]: http://www.phrack.org/issues/54/8.html#article
-[sql-vuln-1]: http://www.tripwire.com/state-of-security/latest-security-news/one-million-wordpress-websites-vulnerable-to-sql-injection-attack/
-[sql-vuln-2]: http://www.wordfence.com/blog/2015/03/woocommerce-sql-injection-vulnerability/
-[sql-vuln-3]: http://thenextweb.com/insider/2015/05/28/indian-music-streaming-service-gaana-hacked-millions-of-users-details-exposed/
+[sql-vuln-1]: https://www.tripwire.com/state-of-security/latest-security-news/one-million-wordpress-websites-vulnerable-to-sql-injection-attack/
+[sql-vuln-2]: https://www.wordfence.com/blog/2015/03/woocommerce-sql-injection-vulnerability/
+[sql-vuln-3]: https://thenextweb.com/insider/2015/05/28/indian-music-streaming-service-gaana-hacked-millions-of-users-details-exposed/
 [sql-vuln-4]: http://www.thewhir.com/web-hosting-news/millions-wordpress-installations-risk-blind-sql-injection-popular-seo-plugin-yoast
 

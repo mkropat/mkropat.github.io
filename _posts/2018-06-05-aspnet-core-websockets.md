@@ -399,12 +399,12 @@ But maybe it will help someone to have running code to play around with.
 [closestatus]: https://msdn.microsoft.com/en-us/library/system.net.websockets.websocket.closestatus.aspx
 [csrf]: https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)
 [csrf-protection]: https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet
-[cswsh]: http://www.christian-schneider.net/CrossSiteWebSocketHijacking.html
+[cswsh]: https://www.christian-schneider.net/CrossSiteWebSocketHijacking.html
 [demo]: https://github.com/mkropat/WebSocketDemo
 [gracefully-migrate]: https://stackoverflow.com/a/49415007/27581
 [intro-1]: https://docs.microsoft.com/en-us/aspnet/core/fundamentals/websockets?view=aspnetcore-2.1
 [intro-2]: https://radu-matei.com/blog/aspnet-core-websockets-middleware/
-[intro-3]: http://gunnarpeipman.com/2017/03/aspnet-core-websocket-chart/
+[intro-3]: https://gunnarpeipman.com/2017/03/aspnet-core-websocket-chart/
 [intro-4]: https://dotnetthoughts.net/using-websockets-in-aspnet-core/
 [intro-5]: https://www.c-sharpcorner.com/article/how-to-use-websockets-in-asp-net-core-day-nine2/
 [javascript-creds-1]: http://cryto.net/~joepie91/blog/2016/06/13/stop-using-jwt-for-sessions/

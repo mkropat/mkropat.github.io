@@ -100,9 +100,9 @@ It's tempting to put every joke, every little point you want to make somewhere o
 
 Here's the thing: it's OK if you forget to make that one joke during your presentation. I know you thought it was so very clever when you came up with it. The audience might have even laughed. But the audience won't know that you forgot to say something. All they'll notice is that you had a tighter, more focused presentation. And that's a good thing.
 
-[brain-rules]: http://www.brainrules.net/pdf/introduction.pdf
-[photography-principles]: http://www.photographymad.com/pages/view/10-top-photography-composition-rules
-[powerpoint-hate-1]: http://www.canadianbusiness.com/innovation/stop-using-powerpoint/
+[brain-rules]: https://brainrules.net/introduction/
+[photography-principles]: https://www.photographymad.com/pages/view/10-top-photography-composition-rules
+[powerpoint-hate-1]: https://www.canadianbusiness.com/innovation/stop-using-powerpoint/
 [powerpoint-hate-2]: http://www.sethgodin.com/freeprize/reallybad-1.pdf
 [powerpoint-hate-3]: https://www.wired.com/2003/09/ppt2/
 [rule-of-thirds]: https://www.cambridgeincolour.com/tutorials/rule-of-thirds.htm

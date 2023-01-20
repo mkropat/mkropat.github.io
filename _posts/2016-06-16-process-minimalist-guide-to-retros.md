@@ -306,7 +306,7 @@ thread][reddit-thread].
 1. The important thing is that it’s the team’s decision about what to tackle and the team’s responsibility whether it even gets done. I’ve never seen it done, thankfully, but if a manager or some outside force is dictating retro action items and holding the team accountable for them, then the entire point has been missed. The point is to develop a team’s sense of self-efficacy and to prompt action that the team has already agreed is worth doing.
 1. Again, the idea is to reflect on changes the team has accomplished and to maybe be aware of what hasn’t been done yet. If action items are routinely not accomplished, then that’s just another thing you can talk about at retros. Maybe the team is taking on too many items, or maybe they’re committing to things out of their control, or maybe the action items aren’t visible enough—that’s how the team I was on arrived at putting the action items on our Kanban board.
 
-[agile-manifesto]: http://agilemanifesto.org/principles.html
+[agile-manifesto]: https://agilemanifesto.org/principles.html
 [photo-1]: /assets/process-minimalist-guide-to-retros/retro-finding-themes.jpg
 [photo-2]: /assets/process-minimalist-guide-to-retros/retro-not-stock-photo.jpg
 [photo-3]: /assets/process-minimalist-guide-to-retros/retro-remote-participant.jpg
@@ -318,4 +318,4 @@ thread][reddit-thread].
 [retro-definition]: https://www.benlinders.com/2013/whats-an-agile-retrospective-and-why-would-you-do-it/
 [weak-signals]: https://danluu.com/wat/
 
-[retro-activities]: http://retrospectivewiki.org/index.php?title=Retrospective_Plans
+[retro-activities]: https://retrospectivewiki.org/index.php?title=Retrospective_Plans

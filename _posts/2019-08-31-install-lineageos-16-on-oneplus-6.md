@@ -761,7 +761,7 @@ Thanks to Dima for reaching out with a warning that installing the TWRP app can 
 [oneplus-6t]: https://en.wikipedia.org/wiki/OnePlus_6T
 [oneplus-6t-mockup]: https://dribbble.com/shots/5117859-OnePlus-6T-Mockup
 [opengapps]: https://opengapps.org/
-[path-howto-nix]: http://osxdaily.com/2014/08/14/add-new-path-to-path-command-line/
+[path-howto-nix]: https://osxdaily.com/2014/08/14/add-new-path-to-path-command-line/
 [path-howto-windows]: https://www.howtogeek.com/118594/how-to-edit-your-system-path-for-easy-command-line-access/
 [platform-tools]: https://developer.android.com/studio/releases/platform-tools
 [qualcomm-bootloader]: https://www.lineageos.org/engineering/Qualcomm-Firmware/

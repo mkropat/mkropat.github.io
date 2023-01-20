@@ -59,7 +59,7 @@ yet...
 Some characters are valid in names, there's the backtick which is valid when
 escaped, and there are some characters that aren't valid at all.  [The
 documentation lists the full
-rules](http://dev.mysql.com/doc/refman/5.7/en/identifiers.html):
+rules](https://dev.mysql.com/doc/refman/5.7/en/identifiers.html):
 
 > - Permitted characters in quoted identifiers include the full Unicode Basic Multilingual Plane (BMP), except U+0000:
 >   - ASCII: U+0001 .. U+007F
@@ -96,7 +96,7 @@ characters.  However, there are a few other considerations...
 ### SQL Truncation Vulnerability
 
 [The max size of a column name or a table name in MySQL is 64
-characters](http://dev.mysql.com/doc/refman/5.7/en/identifiers.html).  If you
+characters](https://dev.mysql.com/doc/refman/5.7/en/identifiers.html).  If you
 were to store a *quoted* column or table name in a MySQL variable, it would
 need to be 66 character long (64 for the identifier + 2 characters for the
 outside quotes).

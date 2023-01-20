@@ -94,26 +94,26 @@ The hardest part of it all used to be deciding which code to return, but with th
 - [HTTP status codes used by world-famous APIs][api-status-codes]
 - [HTTP status codes visualized as a subway map](http://restlet.com/http-status-codes-map)
 - [Status Codes To Cat Memes As a Service](https://http.cat/)
-- [Status Codes To Dog Memes As a Service](http://httpstatusdogs.com/)
+- [Status Codes To Dog Memes As a Service](https://httpstatusdogs.com/)
 
 [api-status-codes]: https://gist.github.com/vkostyukov/32c84c0c01789425c29a
 [discussion]: https://www.reddit.com/r/webdev/comments/3vslmp/choosing_an_http_status_code_stop_making_it_hard/
 [http-status-classes]: /assets/choosing-an-http-status-code/http-status-classes.png
-[http-status-classes-svg]: http://mlk.nfshost.com/choosing-an-http-status-code/HTTP-Status-Codes.svg
+[http-status-classes-svg]: https://mlk.nfshost.com/choosing-an-http-status-code/HTTP-Status-Codes.svg
 [http-status-codes-key]: /assets/choosing-an-http-status-code/http-status-codes-key.png
 [http-2xx-3xx-status-codes]: /assets/choosing-an-http-status-code/http-2xx-3xx-status-codes.png
-[http-2xx-3xx-status-codes-svg]: http://mlk.nfshost.com/choosing-an-http-status-code/HTTP-2XX-3XX-Status-Codes.svg
+[http-2xx-3xx-status-codes-svg]: https://mlk.nfshost.com/choosing-an-http-status-code/HTTP-2XX-3XX-Status-Codes.svg
 [http-4xx-status-codes]: /assets/choosing-an-http-status-code/http-4xx-status-codes.png
-[http-4xx-status-codes-svg]: http://mlk.nfshost.com/choosing-an-http-status-code/HTTP-4XX-Status-Codes.svg
+[http-4xx-status-codes-svg]: https://mlk.nfshost.com/choosing-an-http-status-code/HTTP-4XX-Status-Codes.svg
 [http-5xx-status-codes]: /assets/choosing-an-http-status-code/http-5xx-status-codes.png
-[http-5xx-status-codes-svg]: http://mlk.nfshost.com/choosing-an-http-status-code/HTTP-5XX-Status-Codes.svg
+[http-5xx-status-codes-svg]: https://mlk.nfshost.com/choosing-an-http-status-code/HTTP-5XX-Status-Codes.svg
 [graph-api]: https://developers.facebook.com/docs/graph-api
-[proxy-cache-etc]: http://stackoverflow.com/a/31330860/27581
+[proxy-cache-etc]: https://stackoverflow.com/a/31330860/27581
 [rfc-2068]: https://tools.ietf.org/html/rfc2068
 [rfc-2616]: https://tools.ietf.org/html/rfc2616
 [rfc-7231]: https://tools.ietf.org/html/rfc7231
 [roy-fielding]: https://en.wikipedia.org/wiki/Roy_Fielding
 [translation-spanish]: https://blog.agetic.gob.bo/?p=185
-[translation-japanese]: http://postd.cc/choosing-an-http-status-code/
+[translation-japanese]: https://postd.cc/choosing-an-http-status-code/
 [win98-rfc2068-annotated]: /assets/choosing-an-http-status-code/win98-rfc2068-annotated.png "If you think about it, it's a testament to RFC 2068 that Netscape Navigator still works in 2015 at all"
 

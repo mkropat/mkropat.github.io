@@ -88,7 +88,7 @@ To tell Visual Studio to automatically load `.pdb` files in symbol packages I
 think you have to do one of 2 things (and I'm not sure which one it actually
 is):
 
-- ["Enable Source Link support" and/or "Enable source server support"](http://blog.ctaggart.com/2017/03/enable-source-link-support-announcing.html)
+- ["Enable Source Link support" and/or "Enable source server support"](https://blog.ctaggart.com/2017/03/enable-source-link-support-announcing.html)
 - [Add the symbol server url to the Symbol file location list](https://msdn.microsoft.com/en-us/library/ms241613.aspx)
 
 You may have noticed I don't really know how to do this, and that's because I
