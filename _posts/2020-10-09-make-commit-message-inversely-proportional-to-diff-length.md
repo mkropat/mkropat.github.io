@@ -134,6 +134,10 @@ By "risky" I mean changes that fall into one or more of these categories:
 
 Why? Because I like to maintain a clean commit history, even as a feature branch evolves (for example: in response to code review feedback).<sup><a href="#note8">8</a></sup> And when you have to make changes earlier in the commit history it can necessitate follow-on changes to later commits. More changes leads to more work and more opportunity for bugs.
 
+## Some Other Good Reads
+
+- [Write Better Commits, Build Better Projects](https://github.blog/2022-06-30-write-better-commits-build-better-projects/)
+
 ### Notes
 
 1. <a name="note1"></a> Some false steps are worth committing! If it is not immediately obvious why one approach is a bad idea until you try it, committing the attempt then immediately reverting the commit is a form of documentation left in the history for future readers.

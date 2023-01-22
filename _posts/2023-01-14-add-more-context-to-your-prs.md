@@ -68,6 +68,10 @@ After you get in the habit of adding this kind of context, it takes little extra
 
 The end result is noticeably better software. More importantly, the end result is an end to annoyingly bad PR feedback, having been displaced by good feedback.
 
+## Some Other Good Reads
+
+- [10 Tips to Get Faster Code Reviews](https://stefanbuck.com/blog/10-tips-faster-code-reviews)
+
 ### Notes
 
 1. <a name="note-1"></a> Instead of looking for obvious mistakes, I will think about what scenarios/tests that are not so obvious but might be absent.
