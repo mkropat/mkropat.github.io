@@ -8,6 +8,7 @@ remote_theme: mkropat/jekyll-theme-antisocial
 
 # Site settings
 title: codetinkerer.com
+description: A blog about computers and coding, bouncing between professional software engineering practices and unabashed amateurism.
 author: Michael Kropat
 author_url: /about
 email: hello@kropat.email
