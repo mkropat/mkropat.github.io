@@ -1,0 +1,16 @@
+<footer class="site-footer">
+  <div class="site-footer-connect">
+    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a> or <label for="email">email</label>:</p>
+    <form
+      action="https://buttondown.email/api/emails/embed-subscribe/michaelkropat"
+      method="post"
+      target="popupwindow"
+      class="embeddable-buttondown-form">
+      <input type="email" name="email" placeholder="you@example.com" />
+      <input type="hidden" value="1" name="embed" />
+      <input type="submit" value="Subscribe" />
+    </form>
+  </div>
+
+  <p>{{- site.description | escape -}}</p>
+</footer>
