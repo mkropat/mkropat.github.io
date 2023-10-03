@@ -15,7 +15,7 @@ The first rule of stacked branches<sup><a href="/2023/10/01/stacked-branches-wit
 
 **Anyone who has set up stacked branches knows what a pain it can be to manage.** The initial setup is easy. The problem comes when there is a merge conflict between your stack and the `main` branch. Or what happens when you need to pull in a change that got merged to `main`.
 
-If you haven't been keeping up with new Git features, your workflow probably involves a lot of `git checkout`s,<sup><a href="/2023/10/01/stacked-branches-with-vanilla-git.html#note-2">2</a></sup> lots of of `git rebase` commands, maybe commit counting like `HEAD~123`, or `cherry-pick`s or who knows what other tedious work. Even after all that you probably missed something and now one of your PRs shows a bunch of duplicate commits.
+If you haven't been keeping up with new Git features, your workflow probably involves a lot of `git checkout`s,<sup><a href="/2023/10/01/stacked-branches-with-vanilla-git.html#note-2">2</a></sup> lots of `git rebase` commands, maybe commit counting like `HEAD~123`, or `cherry-pick`s or who knows what other tedious work. Even after all that you probably missed something and now one of your PRs shows a bunch of duplicate commits.
 
 It is 2023. There is a better way.
 
@@ -26,8 +26,8 @@ It is 2023. There is a better way.
 ## tl;dr
 
 1. Never switch off your integration branch--it is a productivity killer
-2. `git config --global --type=bool rebase.updateRefs true`
-3. `git rebase --keep-base`
+2. `git config --global --type=bool rebase.updateRefs true` ([docs][update-refs])
+3. `git rebase --keep-base` ([docs][keep-base])
 
 Don't worry if that doesn't make sense, it will when we are done.
 
@@ -334,3 +334,5 @@ Perhaps in another post I can explain how to work all these commands into your w
 
 [gitbutler]: https://blog.gitbutler.com/building-virtual-branches/
 [graphite]: https://graphite.dev/
+[keep-base]: https://git-scm.com/docs/git-rebase#Documentation/git-rebase.txt---keep-base
+[update-refs]: https://git-scm.com/docs/git-rebase#Documentation/git-rebase.txt---update-refs
