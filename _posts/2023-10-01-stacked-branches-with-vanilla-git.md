@@ -314,7 +314,7 @@ Perhaps in another post I can explain how to work all these commands into your w
 
 ## Notes
 
-1. <a name="note-1"></a> Some people prefer to talk about stacked pull requests (PRs). Since every PR is represented by a branch underneath the hood and this post is about vanilla Git, I stick with "stacked branches" to refer to the concept. For all practical purposes you can replace the term with "stacked PRs" and the advice is the same.
+1. <a name="note-1"></a> Some people prefer to talk about "stacked diffs" or "stacked pull requests" (PRs). Since this is a post about vanilla Git, I stick with "stacked branches" to refer to the concept. For all practical purposes you can substitute in the other terms and the advice is the same.
 1. <a name="note-2"></a>  Stop using `git checkout` you dinosaur. For normal use cases, we have `git switch` now.
 1. <a name="note-3"></a> If you want to play along at home--with the exact same commit SHAs--run the following commands before running the example git commands:
 
