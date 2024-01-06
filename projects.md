@@ -20,16 +20,6 @@ Some stuff I've published:
 
 <div class="portfolio-entry">
   <div class="portfolio-feature">
-    <a href="https://www.codetinkerer.com/podcast/"><img src="assets/index/get-podcast-link.png"/></a>
-  </div>
-  <div class="portfolio-description">
-    <h4><a href="https://www.codetinkerer.com/podcast/">Get Podcast Link</a></h4>
-    <p>look up the feed URL given an iTunes or website link</p>
-  </div>
-</div>
-
-<div class="portfolio-entry">
-  <div class="portfolio-feature">
     <a href="https://www.codetinkerer.com/is-shell-portable/">
       <img src="assets/index/is-shell-portable.png" />
     </a>
@@ -128,28 +118,6 @@ Tighampers</code></pre>
 
 <div class="portfolio-entry">
   <div class="portfolio-feature sh">
-    <a href="https://github.com/mkropat/sh-realpath">
-      <pre><code>$ source ./realpath.sh
-$ realpath /proc/self
-/proc/2772
-
-$ cd /tmp
-$ mkdir -p somedir/targetdir somedir/anotherdir
-$ ln -s somedir somedirlink
-$ ln -s somedir/anotherdir/../anotherlink somelink
-$ ln -s targetdir/targetpath somedir/anotherlink
-$ realpath .///somedirlink/././anotherdir/../../somelink
-/tmp/somedir/targetdir/targetpath</code></pre>
-    </a>
-  </div>
-  <div class="portfolio-description">
-    <h4><a href="https://github.com/mkropat/sh-realpath">sh-realpath</a></h4>
-    <p>a portable, pure shell implementation of realpath</p>
-  </div>
-</div>
-
-<div class="portfolio-entry">
-  <div class="portfolio-feature sh">
     <a href="https://github.com/mkropat/sslfie">
       <pre><code>Usage: sslfie [OPTION]... DOMAIN [DOMAIN2]...
 
@@ -187,11 +155,10 @@ Options:
 ### Other Projects
 
 - [BetterWin32Errors](https://github.com/mkropat/BetterWin32Errors) — a better interface to the constants defined in winerror.h
+- [ezguifont.vim](https://github.com/mkropat/vim-ezguifont) — set and adjust the font in a cross-platform way
 - [jekyll-theme-antisocial](https://github.com/mkropat/jekyll-theme-antisocial) — the theme used for this blog
-- [jumpthere.vim](https://github.com/mkropat/vim-jumpthere) — lightweight project switcher for Vim
 - [luks-mount](https://github.com/mkropat/luks-mount) — teach mount(8) to open LUKS containers
-- [`shpy`](https://github.com/mkropat/shpy) — spies and stubs for shell unit testing
+- [`shpy`](https://github.com/codehearts/shpy) — spies and stubs for shell unit testing
 - [Snippets](snippets) — a selected list of code snippets I've published
 - [standalone-dovecot-imap](https://github.com/mkropat/standalone-dovecot-imap) — keep a local IMAP mirror, painlessly
-- [Talks](talks) — list of some talks I've given
 - [uniformity.vim](https://github.com/mkropat/vim-uniformity) — convert indentation+whitespace across a project to be consistent

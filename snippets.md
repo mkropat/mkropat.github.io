@@ -18,7 +18,6 @@ This is a curated list of potentially useful snippets that I've published.
 #### Javascript
 
 - [require.js](https://gist.github.com/mkropat/c25ef5fc57d75a042868e6a160c175cf) — `require(...)` npm dependencies from the browser console
-- [ui-router-logging.js](https://gist.github.com/mkropat/6de4e1dc3a9577789917) — automatic trace logging of Angular.js events and ui-router state transitions
 
 #### *nix
 
