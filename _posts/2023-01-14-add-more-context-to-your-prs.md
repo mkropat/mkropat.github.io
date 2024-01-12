@@ -5,7 +5,7 @@ date: 2023-01-14
 tags: github code-review
 ---
 
-The quickest way to get nit-picky feedback on a pull request (PR) is to add a two sentence description of *what* was changed and put it up for review. The best way to get good feedback on a PR is to equip the reviewer with the context needed to think more deeply about the change you are proposing.
+The quickest way to get [nit-picky feedback](/2024/01/12/nitpick-code-reviews.html) on a pull request (PR) is to add a two sentence description of *what* was changed and put it up for review. The best way to get good feedback on a PR is to equip the reviewer with the context needed to think more deeply about the change you are proposing.
 
 <!--more-->
 ---
