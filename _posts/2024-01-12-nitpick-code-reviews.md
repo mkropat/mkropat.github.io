@@ -5,7 +5,7 @@ date: 2024-01-12
 tags: github code-review
 ---
 
-<p style="text-align: center"><img alt="cowoerker nitpicking work" src="/assets/nitpick-code-reviews/nitpick.webp" style="width: 60%" /></p>
+<p style="text-align: center"><img alt="coworker nitpicking work" src="/assets/nitpick-code-reviews/nitpick.webp" style="width: 60%" /></p>
 
 If there were a competition for who leaves the most pull request (PR) comments during code review, yours truly would be the winner.<sup><a href="/2024/01/12/nitpick-code-reviews.html#note-1">1</a></sup> Some of those comments are spotting immediate bugs or asking clarifying questions. Just as commonly however, the comments are optional naming suggestions<sup><a href="/2024/01/12/nitpick-code-reviews.html#note-2">2</a></sup>, discussion starters, and even--*gasp*--style feedback.
 
