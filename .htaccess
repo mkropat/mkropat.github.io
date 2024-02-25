@@ -14,8 +14,13 @@
 
 <IfModule mod_headers.c>
   # Do not cache markup files
-  <FilesMatch "\.(html?|xml)$">
+  <FilesMatch "\.html?$">
     Header set Cache-Control "max-age=0"
+  </FilesMatch>
+
+  # Cache rss feed for 2 hours
+  <FilesMatch "\.xml$">
+    Header set Cache-Control "max-age=7200"
   </FilesMatch>
 
   # Cache for 2 hours static files that do not get cache busted
