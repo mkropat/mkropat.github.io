@@ -19,6 +19,7 @@ excerpt_separator: <!--more-->
 paginate: 5
 header_pages:
  - about.md
+ - links.md
  - projects.md
 
 github_username:  mkropat
