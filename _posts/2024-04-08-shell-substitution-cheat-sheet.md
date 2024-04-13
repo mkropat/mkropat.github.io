@@ -24,7 +24,7 @@ Plus, because the syntax is so terse,<sup><a href="{{ page.url }}#note-1">1</a><
 cmd1 < <(cmd2)
 ```
 
-(**Hint**: would a pipe be more straightforward here? `cmd2 | cmd1`)
+(**Hint**: would a pipe be more straightforward here?<sup><a href="{{ page.url }}#note-2">2</a></sup> `cmd2 | cmd1`)
 
 I don't remember when it dawned on me that all the different syntaxes basically boil down to making square pegs fit in round holes, and that I could approach any problem as: *(starting shape, desired shape) ⇒ syntax*.
 
@@ -250,6 +250,7 @@ bar
 ## Notes
 
 1. <a name="note-1"></a> Not to mention that in the pre-ChatGPT days, it was impossible to Google what most of the syntax does unless you happened to know the syntax's *true name*.
+1. <a name="note-2"></a> There are subtle implications to using pipes, so I am not saying you should never use `< <(cmd)`, but start with the traditional form that everyone understands (pipes) and only use other forms when there is a specific need.
 
 [busybox]: https://www.busybox.net/
 [command-substitution]: https://www.gnu.org/software/bash/manual/bash.html#Command-Substitution
