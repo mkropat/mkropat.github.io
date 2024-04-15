@@ -5,8 +5,6 @@ date: 2024-04-14
 tags: open-source software tools
 ---
 
-**Note**: apologies to everyone who got an early copy of this post
-
 Having had the need to do an OS reinstall or two lately, I've taken the opportunity to swap in a number of new tools and retire old tools. Unlike in my younger days when I would devote the time to survey every tool mentioned on Hacker News starting from time immemorial, the only tools that come into my awareness these days are the ones that people made a point to tell me about, or tools I found after getting fed up with a specific pain point and searched the web for a solution. All of which is to say, I'm not exactly Mr. Current Affairs.
 ![mad fish willy](/assets/software-tools-round-up-2024/mad-fish-willy.webp)
 
