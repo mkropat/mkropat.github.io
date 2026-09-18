@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 120" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#444"/>
+    </marker>
+  </defs>
+
+  <rect x="5" y="30" width="135" height="60" rx="8" fill="#fdfdfd" stroke="#444" stroke-width="2"/>
+  <text x="72.5" y="65" text-anchor="middle" font-size="15" fill="#333">Research</text>
+
+  <line x1="143" y1="60" x2="158" y2="60" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="164" y="30" width="135" height="60" rx="8" fill="#fdfdfd" stroke="#444" stroke-width="2"/>
+  <text x="231.5" y="53" text-anchor="middle" font-size="15" fill="#333">Define</text>
+  <text x="231.5" y="73" text-anchor="middle" font-size="15" fill="#333">Requirements</text>
+
+  <line x1="302" y1="60" x2="317" y2="60" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="323" y="30" width="135" height="60" rx="8" fill="#fdfdfd" stroke="#444" stroke-width="2"/>
+  <text x="390.5" y="65" text-anchor="middle" font-size="15" fill="#333">Plan</text>
+
+  <line x1="461" y1="60" x2="476" y2="60" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="482" y="30" width="135" height="60" rx="8" fill="#fdfdfd" stroke="#444" stroke-width="2"/>
+  <text x="549.5" y="53" text-anchor="middle" font-size="15" fill="#333">Agent</text>
+  <text x="549.5" y="73" text-anchor="middle" font-size="15" fill="#333">Implementation</text>
+
+  <line x1="620" y1="60" x2="635" y2="60" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="641" y="30" width="135" height="60" rx="8" fill="#fdfdfd" stroke="#444" stroke-width="2"/>
+  <text x="708.5" y="65" text-anchor="middle" font-size="15" fill="#333">Review</text>
+
+  <line x1="779" y1="60" x2="794" y2="60" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="800" y="30" width="135" height="60" rx="8" fill="#fdfdfd" stroke="#444" stroke-width="2"/>
+  <text x="867.5" y="65" text-anchor="middle" font-size="15" fill="#333">Ship</text>
+
+  <g stroke="#d62828" stroke-width="9" stroke-linecap="round" opacity="0.85">
+    <line x1="315" y1="18" x2="466" y2="102"/>
+    <line x1="466" y1="18" x2="315" y2="102"/>
+  </g>
+</svg>
